@@ -5,18 +5,21 @@ class Collection:
     site = ''
 
     # The language picked to view the site.
-    language = ''
+    # The default view is Spanish.
+    language = 'esp'
+
+    # The currency used for the collection based on the picked language.
+    # Defaults to € as the default view would be Spanish.
+    currency = '€'
 
     # Constructor.
     def __init__(self):
         self.site = Site()
         self.language = self.site.language()
 
-    # Returns the collection total value converted into the right country currency.
-    def totalValue(self):
-        if self.language == 'esp':
-            self.currency = '€'
-        else:
+        if self.language == 'eng':
             self.currency = '£'
 
+    # Returns the collection total value converted into the right country currency.
+    def totalValue(self):
         return self.currency
