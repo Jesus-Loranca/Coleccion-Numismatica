@@ -1,4 +1,3 @@
-import pytest
 from models.collection import Collection
 
 class TestCollection:
