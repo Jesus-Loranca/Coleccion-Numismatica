@@ -6,5 +6,5 @@ def splitByLanguage(googleData, language):
             return (googleData.split(' | '))[1]
 
         return (googleData.split(' | '))[0]
-    else:
-        return googleData
+
+    return googleData
