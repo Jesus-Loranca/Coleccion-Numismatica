@@ -5,7 +5,7 @@ class Item:
     # Constructor.
     def __init__(self, googleData):
         # googleData sctructure:
-        # {field:value,field:value}, {field:value,field:value}, {...
+        # {field:value, field:value}, {field:value, field:value}, {...
         self.googleData = googleData
 
     # Returns the item back image URL.
