@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div>
+        <div>
+            <img src="{{ item.frontImage() }}" alt="Front image for {{ item.name() }}">
+            <img src="{{ item.backImage() }}" alt="Back image for {{ item.name() }}">
+        </div>
+        <div>
+            <div>
+                <h1>{{ item.denomination() ~ ' de ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
+            </div>
+
+            <div>
+                <p>Name:</p>
+                <p>{{ item.name() }}</p>
+
+                <p>Denomination:</p>
+                <p>{{ item.denomination() }}</p>
+
+                <p>Country:</p>
+                <p>{{ item.country() }}</p>
+
+                <p>Date of issue: </p>
+                <p>{{ item.date() }}</p>
+
+                <p>Serial numbers:</p>
+                <p>{{ item.serialNumber() }}</p>
+
+                <p>Series number:</p>
+                <p>{{ item.seriesNumber() }}</p>
+
+                <p>Grading:</p>
+                <p>{{ item.grading() }}</p>
+
+                <p>Value:</p>
+                <p>{{ item.value() }}</p>
+
+                <p>Cost:</p>
+                <p>{{ item.cost() }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
