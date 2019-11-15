@@ -1,18 +1,19 @@
 import json
 from flask import Flask, jsonify, request, render_template
+from models.site import Site
 from models.item import Item
 app = Flask(__name__)
 
 # pipenv run python app.py
 
 
-@app.route('/')
-def home():
+@app.route('/<string:language>')
+def home(language):
     return 'Colección Numismática'
 
 
-@app.route('/<string:item>/')
-def item(item):
+@app.route('/<string:language>/<string:item>/')
+def item(language, item):
     googleData = {
         'Tipo | Type': 'Moneda | Coin',
         'Nombre | Name': 'Nombre del objeto | Item name',
@@ -28,10 +29,10 @@ def item(item):
         'Coste | Cost': '6,99 EUR',
     }
 
+    item = Item(language, googleData)
+    site = Site(language, item.name())
 
-    item = Item('esp', googleData)
-
-    return render_template('item.html', item = item)
+    return render_template('item.html', site = site, item = item)
 
 # @app.route('/api/staff/')
 # def api_staff():
