@@ -4,13 +4,9 @@ from models.site import Site
 from models.item import Item
 app = Flask(__name__)
 
-# pipenv run python app.py
-
-
 @app.route('/<string:language>')
 def home(language):
     return 'Colección Numismática'
-
 
 @app.route('/<string:language>/<string:item>/')
 def item(language, item):
