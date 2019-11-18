@@ -2,17 +2,13 @@ import json
 from flask import Flask, jsonify, request, render_template
 from models.site import Site
 from models.item import Item
+from helpers.utilities import splitByLanguage
 app = Flask(__name__)
 
 @app.route('/')
 @app.route('/<string:language>/')
 def home(language = ''):
-    name = 'Inicio'
-
-    if (language == 'en'):
-        name = 'Home'
-
-    site = Site(language, name)
+    site = Site(language, splitByLanguage('Inicio | Home', language))
 
     return render_template('home.html', site = site, item = item)
 
