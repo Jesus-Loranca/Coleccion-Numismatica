@@ -4,9 +4,17 @@ from models.site import Site
 from models.item import Item
 app = Flask(__name__)
 
-@app.route('/<string:language>')
-def home(language):
-    return 'Colección Numismática'
+@app.route('/')
+@app.route('/<string:language>/')
+def home(language = ''):
+    name = 'Inicio'
+
+    if (language == 'en'):
+        name = 'Home'
+
+    site = Site(language, name)
+
+    return render_template('home.html', site = site, item = item)
 
 @app.route('/<string:language>/<string:item>/')
 def item(language, item):
