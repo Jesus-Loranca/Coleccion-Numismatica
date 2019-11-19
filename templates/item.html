@@ -2,9 +2,14 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-12 col-md-6">
-            <img src="{{ item.frontImage() }}" alt="Front image for {{ item.name() }}">
-            <img src="{{ item.backImage() }}" alt="Back image for {{ item.name() }}">
+        <div class="es col-12 col-md-6">
+            <img src="{{ item.frontImage() }}" alt="Imagen de la cara: {{ item.name() }}">
+            <img src="{{ item.backImage() }}" alt="Imagen del dorso: {{ item.name() }}">
+        </div>
+
+        <div class="en col-12 col-md-6">
+            <img src="{{ item.frontImage() }}" alt="Front image: {{ item.name() }}">
+            <img src="{{ item.backImage() }}" alt="Back image: {{ item.name() }}">
         </div>
         <div class="col-12 col-md-6">
             <div class="row">
@@ -12,31 +17,40 @@
             </div>
 
             <div class="row">
-                <p class="col-12 col-md-6 col-lg-3">Name:</p>
+                <p class="es col-12 col-md-6 col-lg-3">Nombre:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Name:</p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.name() }}</p>
 
-                <p class="col-12 col-md-6 col-lg-3">Denomination:</p>
+                <p class="es col-12 col-md-6 col-lg-3">Denominación:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Denomination:</p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.denomination() }}</p>
 
-                <p class="col-12 col-md-6 col-lg-3">Country:</p>
+                <p class="es col-12 col-md-6 col-lg-3">País:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Country:</p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.country() }}</p>
 
-                <p class="col-12 col-md-6 col-lg-3">Date of issue: </p>
+                <p class="es col-12 col-md-6 col-lg-3">Fecha de fabricación:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Date of issue: </p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.date() }}</p>
 
-                <p class="col-12 col-md-6 col-lg-3">Serial numbers:</p>
-                <p class="col-12 col-md-6 col-lg-9">{{ item.serialNumber() }}</p>
-
-                <p class="col-12 col-md-6 col-lg-3">Series number:</p>
+                <p class="es col-12 col-md-6 col-lg-3">Año de la serie:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Series number:</p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.seriesNumber() }}</p>
 
-                <p class="col-12 col-md-6 col-lg-3">Grading:</p>
+                <p class="es col-12 col-md-6 col-lg-3">Número de Serie:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Serial numbers:</p>
+                <p class="col-12 col-md-6 col-lg-9">{{ item.serialNumber() }}</p>
+
+                <p class="es col-12 col-md-6 col-lg-3">Estado:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Grading:</p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.grading() }}</p>
 
-                <p class="col-12 col-md-6 col-lg-3">Value:</p>
+                <p class="es col-12 col-md-6 col-lg-3">Valor:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Value:</p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.value() }}</p>
 
-                <p class="col-12 col-md-6 col-lg-3">Cost:</p>
+                <p class="es col-12 col-md-6 col-lg-3">País:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Coste:</p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.cost() }}</p>
             </div>
         </div>

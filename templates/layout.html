@@ -6,6 +6,16 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>{{ site.title ~ ' | ' ~ site.name() }}</title>
 
+        {% if site.language == 'en' %}
+            <style>
+                .es { display: none !important; }
+            </style>
+        {% else %}
+            <style>
+                .en { display: none !important; }
+            </style>
+        {% endif %}
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
@@ -18,11 +28,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="">Home</a>
+                        <a class="es nav-link" href="{{ 'http://127.0.0.1:5000/es' }}">Inicio</a>
+                        <a class="en nav-link" href="{{ 'http://127.0.0.1:5000/en' }}">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="">Interesting Links</a>
+                        <a class="es nav-link" href="{{ 'http://127.0.0.1:5000/es/links-interesantes' }}">Links Interesantes</a>
+                        <a class="en nav-link" href="{{ 'http://127.0.0.1:5000/en/interesting-links' }}">Interesting Links</a>
                     </li>
                 </ul>
             </div>
