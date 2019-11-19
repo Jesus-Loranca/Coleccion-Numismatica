@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 @app.route('/<string:language>/')
-def home(language = ''):
+def home(language = 'es'):
     site = Site(language, splitByLanguage('Inicio | Home', language))
 
     return render_template('home.html', site = site, item = item)
