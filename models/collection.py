@@ -18,9 +18,7 @@ class Collection:
         'client_x509_cert_url':        os.environ.get('client_x509_cert_url')
     }
 
-
     credentials = ServiceAccountCredentials.from_json_keyfile_name('Coleccion Numismatica-3639760c8254.json', scope)
-
     # credentials = ServiceAccountCredentials.from_json_keyfile_dict(credentialsFile, scope)
     client = gspread.authorize(credentials)
 
