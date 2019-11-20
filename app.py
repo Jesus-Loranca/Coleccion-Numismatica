@@ -1,9 +1,17 @@
 import json
 from flask import Flask, jsonify, request, render_template
 from models.site import Site
+from models.collection import Collection
 from models.item import Item
 from helpers.utilities import splitByLanguage
 app = Flask(__name__)
+
+@app.route('/test')
+def test():
+    site = Site('es', 'test')
+    collection = Collection(site)
+
+    return print(collection.all())
 
 @app.route('/')
 @app.route('/<string:language>/')
