@@ -4,7 +4,7 @@ from models.site import Site
 
 class Collection:
     # Use credentials to create a client to interact with the Google Drive API
-    scope = ['https://spreadsheets.google.com/feeds']
+    scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     credentials = ServiceAccountCredentials.from_json_keyfile_name('Coleccion Numismatica-3639760c8254.json', scope)
     client = gspread.authorize(credentials)
 
