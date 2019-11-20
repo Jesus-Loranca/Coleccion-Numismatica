@@ -10,6 +10,8 @@ pytest-cov = "*"
 
 [packages]
 flask = "*"
+gspread = "*"
+oauth2client = "*"
 
 [requires]
 python_version = "3.7"
