@@ -40,12 +40,13 @@ class TestCollection:
 
         site = Site('es', '')
         collection = Collection(site)
+        collection.googleData = data
 
         # Assert expected item by Spanish name.
         assert collection.find('Nombre del objeto 2') == data[1]
 
         # Assert expected item by English name.
-        assert collection.find('Nombre del objeto 2') == data[1]
+        assert collection.find('Item name 2') == data[1]
 
         # Assert empty dict by wrong name.
         assert collection.find('Wrong') == {}

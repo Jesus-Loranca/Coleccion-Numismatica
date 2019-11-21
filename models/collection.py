@@ -51,6 +51,15 @@ class Collection:
     def all(self):
         return self.googleData
 
+    # Finds an item from the google spreadsheet data based on its name.
+    def find(self, name = ''):
+        return next(
+            (
+                item for item in self.googleData
+                if name in item['Nombre | Name']
+            ), {}
+        )
+
     # Returns the collection total value converted into the right country currency.
     def totalValue(self):
         return self.currency
