@@ -7,8 +7,8 @@ def googleData():
         {
             'Tipo | Type': 'Moneda | Coin',
             'Nombre | Name': 'Nombre del objeto | Item name',
-            'Image Cara | Front Image': '',
-            'Image Dorso | Back Image': '',
+            'Imagen Cara | Front Image': '',
+            'Imagen Dorso | Back Image': '',
             'País | Country': 'España | Spain',
             'Denominación | Denomination': '2 EUR',
             'Fecha de fabricación | Date of issue': '1992',
@@ -21,8 +21,8 @@ def googleData():
         {
             'Tipo | Type': 'Moneda | Coin',
             'Nombre | Name': 'Nombre del objeto 2 | Item name 2',
-            'Image Cara | Front Image': '',
-            'Image Dorso | Back Image': '',
+            'Imagen Cara | Front Image': '',
+            'Imagen Dorso | Back Image': '',
             'País | Country': 'Reino Unido | United Kingdom',
             'Denominación | Denomination': '2 GBP',
             'Fecha de fabricación | Date of issue': '1996',
