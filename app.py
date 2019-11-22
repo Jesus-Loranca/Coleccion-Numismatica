@@ -22,23 +22,9 @@ def home(language = 'es'):
 
 @app.route('/<string:language>/<string:item>/')
 def item(language, item):
-    googleData = {
-        'Tipo | Type': 'Moneda | Coin',
-        'Nombre | Name': 'Nombre del objeto | Item name',
-        'Image Cara | Front Image': '',
-        'Image Dorso | Back Image': '',
-        'País | Country': 'Reino Unido | United Kingdom',
-        'Denominación | Denomination': '2 EUR',
-        'Fecha de fabricación | Date of issue': '1992',
-        'Año de la serie | Series number': '',
-        'Número de Serie | Serial numbers': '',
-        'Estado | Grading': 'EBC (Extraordinariamente Bien Conservada) | EF (Extremely Fine)',
-        'Valor | Value': '2 EUR',
-        'Coste | Cost': '6,99 EUR',
-    }
-
-    item = Item(language, googleData)
-    site = Site(language, item.name())
+    site = Site(language, item)
+    collection = Collection(site)
+    item = Item(language, collection.find(item))
 
     return render_template('item.html', site = site, item = item)
 
