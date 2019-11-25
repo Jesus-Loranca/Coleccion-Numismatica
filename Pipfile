@@ -12,6 +12,7 @@ pytest-cov = "*"
 flask = "*"
 gspread = "*"
 oauth2client = "*"
+unidecode = "*"
 
 [requires]
 python_version = "3.7"
