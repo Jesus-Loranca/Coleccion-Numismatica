@@ -11,10 +11,18 @@
             <img src="{{ item.frontImage() }}" alt="Front image: {{ item.name() }}">
             <img src="{{ item.backImage() }}" alt="Back image: {{ item.name() }}">
         </div>
+
         <div class="col-12 col-md-6">
             <div class="row">
-                <h1 class="es">{{ item.denomination() ~ ' de ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
-                <h1 class="en">{{ item.denomination() ~ ' from ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
+                {% set link = item.link() %}
+                {% if link %}
+                    <a href="{{ link }}">
+                {% endif %}
+                        <h1 class="es">{{ item.denomination() ~ ' de ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
+                        <h1 class="en">{{ item.denomination() ~ ' from ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
+                {% if link %}
+                    </a>
+                {% endif %}
             </div>
 
             <div class="row">
