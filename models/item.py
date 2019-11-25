@@ -44,6 +44,10 @@ class Item:
     def grading(self):
         return splitByLanguage(self.googleData['Estado | Grading'], self.language)
 
+    # Returns the item link to its mint page.
+    def link(self):
+        return splitByLanguage(self.googleData['Link'], self.language)
+
     # Returns the item name.
     def name(self):
         return splitByLanguage(self.googleData['Nombre | Name'], self.language)

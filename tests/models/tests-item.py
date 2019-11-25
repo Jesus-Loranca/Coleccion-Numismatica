@@ -6,6 +6,7 @@ def googleData():
     return {
         'Tipo | Type': 'Moneda | Coin',
         'Nombre | Name': 'Nombre del objeto | Item name',
+        'Link': 'https://www.google.es/',
         'Imagen Cara | Front Image': '',
         'Imagen Dorso | Back Image': '',
         'País | Country': 'Reino Unido | United Kingdom',
@@ -67,3 +68,6 @@ class TestItem:
 
     def test_item_returns_expected_cost(self):
         itemTestsWrapper('cost', 'Coste | Cost')
+
+    def test_link_returns_expected_url(self):
+        itemTestsWrapper('link', 'Link')

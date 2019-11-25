@@ -7,6 +7,7 @@ def googleData():
         {
             'Tipo | Type': 'Moneda | Coin',
             'Nombre | Name': 'Nombre del objeto | Item name',
+            'Link': 'https://www.google.es/',
             'Imagen Cara | Front Image': '',
             'Imagen Dorso | Back Image': '',
             'País | Country': 'España | Spain',
@@ -20,6 +21,7 @@ def googleData():
         },
         {
             'Tipo | Type': 'Moneda | Coin',
+            'Link': 'https://www.google.com/',
             'Nombre | Name': 'Nombre del objeto 2 | Item name 2',
             'Imagen Cara | Front Image': '',
             'Imagen Dorso | Back Image': '',
