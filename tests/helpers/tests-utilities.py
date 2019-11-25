@@ -1,4 +1,5 @@
 from helpers.utilities import splitByLanguage
+from helpers.utilities import stringToURL
 
 class TestUtilities:
 
@@ -14,3 +15,6 @@ class TestUtilities:
 
         # Split Int
         assert splitByLanguage(1992, 'es') == 1992
+
+    def test_string_to_url_returns_expected_url(self):
+        assert stringToURL('Historia del Progreso Tecnológico') == 'historia-del-progreso-tecnologico'

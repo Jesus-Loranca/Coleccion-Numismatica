@@ -69,5 +69,5 @@ class TestItem:
     def test_item_returns_expected_cost(self):
         itemTestsWrapper('cost', 'Coste | Cost')
 
-    def test_link_returns_expected_url(self):
+    def test_item_returns_expected_url(self):
         itemTestsWrapper('link', 'Link')
