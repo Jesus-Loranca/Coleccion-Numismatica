@@ -67,6 +67,10 @@ class Item:
     def type(self):
         return splitByLanguage(self.googleData['Tipo | Type'], self.language)
 
+    # Returns the item URL name.
+    def URL(self):
+        return splitByLanguage(self.googleData['URL'], self.language)
+
     # Returns the item value.
     def value(self):
         return splitByLanguage(self.googleData['Valor | Value'], self.language)

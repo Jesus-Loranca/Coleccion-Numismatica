@@ -6,7 +6,6 @@ def googleData():
     return {
         'Tipo | Type': 'Moneda | Coin',
         'Nombre | Name': 'Nombre del objeto | Item name',
-        'Link': 'https://www.google.es/',
         'Imagen Cara | Front Image': '',
         'Imagen Dorso | Back Image': '',
         'País | Country': 'Reino Unido | United Kingdom',
@@ -17,6 +16,8 @@ def googleData():
         'Estado | Grading': 'EBC (Extraordinariamente Bien Conservada) | EF (Extremely Fine)',
         'Valor | Value': '2 EUR',
         'Coste | Cost': '6,99 EUR',
+        'URL': 'nombre-del-objeto | item-name',
+        'Link': 'https://www.google.es/',
     }
 
 # Wrapper to avoid repetition in the Item tests.
@@ -69,5 +70,8 @@ class TestItem:
     def test_item_returns_expected_cost(self):
         itemTestsWrapper('cost', 'Coste | Cost')
 
-    def test_item_returns_expected_url(self):
+    def test_item_returns_expected_link(self):
         itemTestsWrapper('link', 'Link')
+
+    def test_item_returns_expected_url(self):
+        itemTestsWrapper('URL', 'URL')
