@@ -17,8 +17,10 @@ def test():
 @app.route('/<string:language>/')
 def home(language = 'es'):
     site = Site(language, splitByLanguage('Inicio | Home', language))
+    collection = Collection(site)
+    items = collection.asItems()
 
-    return render_template('home.html', site = site, item = item)
+    return render_template('home.html', site = site, items = items)
 
 @app.route('/<string:language>/<string:item>/')
 def item(language, item):

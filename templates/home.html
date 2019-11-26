@@ -2,4 +2,8 @@
 
 {% block content %}
     <h1>Home</h1>
+
+    {% for item in items %}
+        <a href="{{ item.link() }}">{{ item.name() }}</a>
+    {% endfor %}
 {% endblock %}
