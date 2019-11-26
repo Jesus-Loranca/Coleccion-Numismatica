@@ -7,7 +7,6 @@ def googleData():
         {
             'Tipo | Type': 'Moneda | Coin',
             'Nombre | Name': 'Nombre del objeto | Item name',
-            'Link': 'https://www.google.es/',
             'Imagen Cara | Front Image': '',
             'Imagen Dorso | Back Image': '',
             'País | Country': 'España | Spain',
@@ -18,10 +17,11 @@ def googleData():
             'Estado | Grading': 'EBC (Extraordinariamente Bien Conservada) | EF (Extremely Fine)',
             'Valor | Value': '2 EUR',
             'Coste | Cost': '6,99 EUR',
+            'URL': 'nombre-del-objeto | item-name',
+            'Link': 'https://www.google.es/',
         },
         {
             'Tipo | Type': 'Moneda | Coin',
-            'Link': 'https://www.google.com/',
             'Nombre | Name': 'Nombre del objeto 2 | Item name 2',
             'Imagen Cara | Front Image': '',
             'Imagen Dorso | Back Image': '',
@@ -33,6 +33,8 @@ def googleData():
             'Estado | Grading': 'EBC (Extraordinariamente Bien Conservada) | EF (Extremely Fine)',
             'Valor | Value': '4 GBP',
             'Coste | Cost': '9,99 GBP',
+            'URL': 'nombre-del-objeto-2 | item-name-2',
+            'Link': 'https://www.google.com/',
         }
     ]
 
@@ -52,3 +54,9 @@ class TestCollection:
 
         # Assert empty dict by wrong name.
         assert collection.find('Wrong') == {}
+
+        # Assert expected value from a different field.
+        assert collection.find('nombre-del-objeto-2', 'URL') == data[1]
+
+        # Assert empty dict from a different field.
+        assert collection.find('Wrong', 'Link') == {}

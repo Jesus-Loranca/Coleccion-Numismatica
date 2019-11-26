@@ -5,7 +5,7 @@ class Site:
 
     # The page name.
     # It would be different depending on the view and the language.
-    pageName = 'es'
+    title = ''
 
     # Constructor.
     def __init__(self, language, pageName):
