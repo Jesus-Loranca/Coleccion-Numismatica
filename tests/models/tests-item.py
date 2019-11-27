@@ -16,8 +16,8 @@ def googleData():
         'Estado | Grading': 'EBC (Extraordinariamente Bien Conservada) | EF (Extremely Fine)',
         'Valor | Value': '2 EUR',
         'Coste | Cost': '6,99 EUR',
-        'URL': 'nombre-del-objeto | item-name',
-        'Link': 'https://www.google.es/',
+        'Link': 'nombre-del-objeto | item-name',
+        'Link de la Ceca | Mint\'s Link': 'https://www.google.es/',
     }
 
 # Wrapper to avoid repetition in the Item tests.
@@ -71,7 +71,7 @@ class TestItem:
         itemTestsWrapper('cost', 'Coste | Cost')
 
     def test_item_returns_expected_link(self):
-        itemTestsWrapper('link', 'Link')
+        itemTestsWrapper('mintLink', 'Link de la Ceca | Mint\'s Link')
 
     def test_item_returns_expected_url(self):
-        itemTestsWrapper('URL', 'URL')
+        itemTestsWrapper('link', 'Link')

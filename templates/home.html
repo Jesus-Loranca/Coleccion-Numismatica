@@ -5,7 +5,7 @@
     <h1 class="en">Items</h2>
 
     {% for item in items %}
-        <a href="{{ site.language ~ '/' ~ item.URL() }}">
+        <a href="{{ site.language ~ '/' ~ item.link() }}">
             {{ item.name() }}
         </a>
     {% endfor %}
