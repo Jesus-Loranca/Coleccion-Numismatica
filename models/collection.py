@@ -2,6 +2,7 @@ import os
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from models.site import Site
+from models.item import Item
 
 class Collection:
     # Use credentials to create a client to interact with the Google Drive API
@@ -50,6 +51,15 @@ class Collection:
     # Returns all the collection being readed from the google spreadsheet.
     def all(self):
         return self.googleData
+
+    # Returns the collection as a list of Items,
+    def asItems(self):
+        collectionAsItems = []
+
+        for item in self.googleData:
+            collectionAsItems.append(Item(self.language, item))
+
+        return collectionAsItems
 
     # Finds an item from the google spreadsheet data based on its name.
     def find(self, name = '', field = 'Nombre | Name'):

@@ -60,3 +60,17 @@ class TestCollection:
 
         # Assert empty dict from a different field.
         assert collection.find('Wrong', 'Link') == {}
+
+    def test_as_item_returns_expected_results(self):
+        data = googleData()
+
+        site = Site('es', '')
+        collection = Collection(site)
+        collection.googleData = data
+
+        # Assert data is turned right into a list of Items.
+        assert collection.asItems()[0].name() == 'Nombre del objeto'
+
+        # Assert empty list is returned when there's no data.
+        collection.googleData = []
+        assert collection.asItems() == []

@@ -1,9 +1,12 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <h1>Home</h1>
+    <h1 class="es">Objetos</h2>
+    <h1 class="en">Items</h2>
 
     {% for item in items %}
-        <a href="{{ item.link() }}">{{ item.name() }}</a>
+        <a href="{{ site.language ~ '/' ~ item.URL() }}">
+            {{ item.name() }}
+        </a>
     {% endfor %}
 {% endblock %}
