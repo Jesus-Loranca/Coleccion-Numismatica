@@ -44,9 +44,13 @@ class Item:
     def grading(self):
         return splitByLanguage(self.googleData['Estado | Grading'], self.language)
 
-    # Returns the item link to its mint page.
+    # Returns the item's page link.
     def link(self):
         return splitByLanguage(self.googleData['Link'], self.language)
+
+    # Returns the item link to its mint page.
+    def mintLink(self):
+        return splitByLanguage(self.googleData['Link de la Ceca | Mint\'s Link'], self.language)
 
     # Returns the item name.
     def name(self):
@@ -66,10 +70,6 @@ class Item:
     # It would Bank Note or Coin.
     def type(self):
         return splitByLanguage(self.googleData['Tipo | Type'], self.language)
-
-    # Returns the item URL name.
-    def URL(self):
-        return splitByLanguage(self.googleData['URL'], self.language)
 
     # Returns the item value.
     def value(self):

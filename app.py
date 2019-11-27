@@ -26,7 +26,7 @@ def home(language = 'es'):
 def item(language, item):
     site = Site(language, item)
     collection = Collection(site)
-    item = Item(language, collection.find(item, 'URL'))
+    item = Item(language, collection.find(item, 'Link'))
     site.title = item.name()
 
     return render_template('item.html', site = site, item = item)

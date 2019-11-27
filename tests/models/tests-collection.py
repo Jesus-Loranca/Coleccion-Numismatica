@@ -17,8 +17,8 @@ def googleData():
             'Estado | Grading': 'EBC (Extraordinariamente Bien Conservada) | EF (Extremely Fine)',
             'Valor | Value': '2 EUR',
             'Coste | Cost': '6,99 EUR',
-            'URL': 'nombre-del-objeto | item-name',
-            'Link': 'https://www.google.es/',
+            'Link': 'nombre-del-objeto | item-name',
+            'Link de la Ceca | Mint\'s Link': 'https://www.google.es/',
         },
         {
             'Tipo | Type': 'Moneda | Coin',
@@ -33,8 +33,8 @@ def googleData():
             'Estado | Grading': 'EBC (Extraordinariamente Bien Conservada) | EF (Extremely Fine)',
             'Valor | Value': '4 GBP',
             'Coste | Cost': '9,99 GBP',
-            'URL': 'nombre-del-objeto-2 | item-name-2',
-            'Link': 'https://www.google.com/',
+            'Link': 'nombre-del-objeto-2 | item-name-2',
+            'Link de la Ceca | Mint\'s Link': 'https://www.google.com/',
         }
     ]
 
@@ -56,10 +56,10 @@ class TestCollection:
         assert collection.find('Wrong') == {}
 
         # Assert expected value from a different field.
-        assert collection.find('nombre-del-objeto-2', 'URL') == data[1]
+        assert collection.find('nombre-del-objeto-2', 'Link') == data[1]
 
         # Assert empty dict from a different field.
-        assert collection.find('Wrong', 'Link') == {}
+        assert collection.find('Wrong', 'Link de la Ceca | Mint\'s Link') == {}
 
     def test_as_item_returns_expected_results(self):
         data = googleData()

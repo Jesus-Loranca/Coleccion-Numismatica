@@ -17,7 +17,7 @@
                 <h1 class="es">{{ item.denomination() ~ ' de ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
                 <h1 class="en">{{ item.denomination() ~ ' from ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
 
-                {% set link = item.link() %}
+                {% set link = item.mintLink() %}
                 {% if link %}
                     <a class="es" href="{{ link }}"><span>Icono para el Link</span></a>
                     <a class="en" href="{{ link }}"><span>Link's icon</span></a>
