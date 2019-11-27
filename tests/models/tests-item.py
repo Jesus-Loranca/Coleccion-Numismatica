@@ -6,8 +6,8 @@ def googleData():
     return {
         'Tipo | Type': 'Moneda | Coin',
         'Nombre | Name': 'Nombre del objeto | Item name',
-        'Image Cara | Front Image': '',
-        'Image Dorso | Back Image': '',
+        'Imagen Cara | Front Image': '',
+        'Imagen Dorso | Back Image': '',
         'País | Country': 'Reino Unido | United Kingdom',
         'Denominación | Denomination': '2 EUR',
         'Fecha de fabricación | Date of issue': '1992',
@@ -16,6 +16,8 @@ def googleData():
         'Estado | Grading': 'EBC (Extraordinariamente Bien Conservada) | EF (Extremely Fine)',
         'Valor | Value': '2 EUR',
         'Coste | Cost': '6,99 EUR',
+        'URL': 'nombre-del-objeto | item-name',
+        'Link': 'https://www.google.es/',
     }
 
 # Wrapper to avoid repetition in the Item tests.
@@ -39,10 +41,10 @@ class TestItem:
         itemTestsWrapper('name', 'Nombre | Name')
 
     def test_item_returns_expected_front_image(self):
-        itemTestsWrapper('frontImage', 'Image Cara | Front Image')
+        itemTestsWrapper('frontImage', 'Imagen Cara | Front Image')
 
     def test_item_returns_expected_back_image(self):
-        itemTestsWrapper('backImage', 'Image Dorso | Back Image')
+        itemTestsWrapper('backImage', 'Imagen Dorso | Back Image')
 
     def test_item_returns_expected_country(self):
         itemTestsWrapper('country', 'País | Country')
@@ -67,3 +69,9 @@ class TestItem:
 
     def test_item_returns_expected_cost(self):
         itemTestsWrapper('cost', 'Coste | Cost')
+
+    def test_item_returns_expected_link(self):
+        itemTestsWrapper('link', 'Link')
+
+    def test_item_returns_expected_url(self):
+        itemTestsWrapper('URL', 'URL')

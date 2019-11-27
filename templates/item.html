@@ -11,9 +11,17 @@
             <img src="{{ item.frontImage() }}" alt="Front image: {{ item.name() }}">
             <img src="{{ item.backImage() }}" alt="Back image: {{ item.name() }}">
         </div>
+
         <div class="col-12 col-md-6">
             <div class="row">
-                <h1>{{ item.denomination() ~ ' de ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
+                <h1 class="es">{{ item.denomination() ~ ' de ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
+                <h1 class="en">{{ item.denomination() ~ ' from ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
+
+                {% set link = item.link() %}
+                {% if link %}
+                    <a class="es" href="{{ link }}"><span>Icono para el Link</span></a>
+                    <a class="en" href="{{ link }}"><span>Link's icon</span></a>
+                {% endif %}
             </div>
 
             <div class="row">
@@ -49,8 +57,8 @@
                 <p class="en col-12 col-md-6 col-lg-3">Value:</p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.value() }}</p>
 
-                <p class="es col-12 col-md-6 col-lg-3">País:</p>
-                <p class="en col-12 col-md-6 col-lg-3">Coste:</p>
+                <p class="es col-12 col-md-6 col-lg-3">Coste:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Cost:</p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.cost() }}</p>
             </div>
         </div>

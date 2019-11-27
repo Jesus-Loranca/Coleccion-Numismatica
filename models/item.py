@@ -18,7 +18,7 @@ class Item:
 
     # Returns the item back image URL.
     def backImage(self):
-        return splitByLanguage(self.googleData['Image Dorso | Back Image'], self.language)
+        return splitByLanguage(self.googleData['Imagen Dorso | Back Image'], self.language)
 
     # Returns the item cost when it was initially bought.
     def cost(self):
@@ -38,11 +38,15 @@ class Item:
 
     # Returns the item front image URL.
     def frontImage(self):
-        return splitByLanguage(self.googleData['Image Cara | Front Image'], self.language)
+        return splitByLanguage(self.googleData['Imagen Cara | Front Image'], self.language)
 
     # Returns the item grading.
     def grading(self):
         return splitByLanguage(self.googleData['Estado | Grading'], self.language)
+
+    # Returns the item link to its mint page.
+    def link(self):
+        return splitByLanguage(self.googleData['Link'], self.language)
 
     # Returns the item name.
     def name(self):
@@ -62,6 +66,10 @@ class Item:
     # It would Bank Note or Coin.
     def type(self):
         return splitByLanguage(self.googleData['Tipo | Type'], self.language)
+
+    # Returns the item URL name.
+    def URL(self):
+        return splitByLanguage(self.googleData['URL'], self.language)
 
     # Returns the item value.
     def value(self):
