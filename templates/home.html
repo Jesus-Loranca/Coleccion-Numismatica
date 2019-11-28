@@ -7,14 +7,11 @@
     <table class="table">
         <thead>
             <tr class="row">
-                <th class="es col-2">Imagen</th>
-                <th class="en col-2">Image</th>
+                <th class="es col-3">Imagen</th>
+                <th class="en col-3">Image</th>
 
-                <th class="es col-2">Tipo</th>
-                <th class="en col-2">Type</th>
-
-                <th class="es col-2">Nombre</th>
-                <th class="en col-2">Name</th>
+                <th class="es col-3">Nombre</th>
+                <th class="en col-3">Name</th>
 
                 <th class="es col-2">País</th>
                 <th class="en col-2">Country</th>
@@ -29,14 +26,11 @@
         <tbody>
             {% for item in items %}
                 <tr class="row">
-                    <td class="es col-2"><a href="{{ site.language ~ '/' ~ item.link() }}"><img src="{{ item.frontImage() }}" alt="Imagen de la cara: {{ item.name() }}"></a></td>
-                    <td class="en col-2"><a href="{{ site.language ~ '/' ~ item.link() }}"><img src="{{ item.backImage() }}" alt="Imagen del dorso: {{ item.name() }}"></a></td>
+                    <td class="es col-3"><a href="{{ site.language ~ '/' ~ item.link() }}"><img src="{{ item.frontImage() }}" alt="Imagen de la cara: {{ item.name() }}"></a></td>
+                    <td class="en col-3"><a href="{{ site.language ~ '/' ~ item.link() }}"><img src="{{ item.backImage() }}" alt="Imagen del dorso: {{ item.name() }}"></a></td>
 
-                    <td class="es col-2">{{ item.type() }}</td>
-                    <td class="en col-2">{{ item.type() }}</td>
-
-                    <td class="es col-2"><a href="{{ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
-                    <td class="en col-2"><a href="{{ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
+                    <td class="es col-3"><a href="{{ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
+                    <td class="en col-3"><a href="{{ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
 
                     <td class="es col-2">{{ item.country() }}</td>
                     <td class="en col-2">{{ item.country() }}</td>
