@@ -20,7 +20,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{ 'http://127.0.0.1:5000/' ~ site.language }}">{{ site.name() }}</a>
+            <a class="navbar-brand" href="{{ site.domain() ~ site.language }}">{{ site.name() }}</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,13 +28,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="es nav-link" href="{{ 'http://127.0.0.1:5000/es' }}">Inicio</a>
-                        <a class="en nav-link" href="{{ 'http://127.0.0.1:5000/en' }}">Home</a>
+                        <a class="es nav-link" href="{{ site.domain() ~ 'es' }}">Inicio</a>
+                        <a class="en nav-link" href="{{ site.domain() ~ 'en' }}">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="es nav-link" href="{{ 'http://127.0.0.1:5000/es/links-interesantes' }}">Links Interesantes</a>
-                        <a class="en nav-link" href="{{ 'http://127.0.0.1:5000/en/interesting-links' }}">Interesting Links</a>
+                        <a class="es nav-link" href="{{ site.domain() ~ 'es/links-interesantes' }}">Links Interesantes</a>
+                        <a class="en nav-link" href="{{ site.domain() ~ 'en/interesting-links' }}">Interesting Links</a>
                     </li>
 
                     <li>
