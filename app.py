@@ -49,4 +49,4 @@ def item(language, item):
 
 if __name__ == "__main__":
     # Debugger is nice for development as it restarts the server for you.
-    app.run(debug=True)
+    app.run(debug = True)
