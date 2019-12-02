@@ -85,10 +85,10 @@ class TestCollection:
         collection.googleData = data
 
         # Assert data is turned right into a list of Items.
-        assert collection.asItems()[0].name() == 'Nombre del objeto'
+        assert collection.asItems()[1].name() == 'Nombre del objeto'
 
         # Assert data is skipped if all the fields are empty.
-        assert collection.asItems()[1].name() == 'Nombre del objeto 2'
+        assert collection.asItems()[0].name() == 'Nombre del objeto 2'
 
         # Assert empty list is returned when there's no data.
         collection.googleData = []

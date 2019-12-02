@@ -56,7 +56,7 @@ class Collection:
     def asItems(self):
         collectionAsItems = []
 
-        for item in self.googleData:
+        for item in reversed(self.googleData):
             if not all(property == '' for property in item.values()):
                 collectionAsItems.append(Item(self.language, item))
 
