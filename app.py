@@ -1,3 +1,4 @@
+import os
 import json
 from flask import Flask, jsonify, request, render_template
 from models.site import Site
@@ -47,6 +48,6 @@ def item(language, item):
 #     else:
 #         return jsonify(data)
 
-if __name__ == "__main__":
+if __name__ == "__main__" and os.environ.get('environment') == 'local':
     # Debugger is nice for development as it restarts the server for you.
     app.run(debug = True)
