@@ -5,6 +5,22 @@ from models.collection import Collection
 def googleData():
     return [
         {
+            'Tipo | Type': '',
+            'Nombre | Name': '',
+            'Imagen Cara | Front Image': '',
+            'Imagen Dorso | Back Image': '',
+            'País | Country': '',
+            'Denominación | Denomination': '',
+            'Fecha de fabricación | Date of issue': '',
+            'Año de la serie | Series number': '',
+            'Número de Serie | Serial numbers': '',
+            'Estado | Grading': '',
+            'Valor | Value': '',
+            'Coste | Cost': '',
+            'Link': '',
+            'Link de la Ceca | Mint\'s Link': '',
+        },
+        {
             'Tipo | Type': 'Moneda | Coin',
             'Nombre | Name': 'Nombre del objeto | Item name',
             'Imagen Cara | Front Image': '',
@@ -70,6 +86,9 @@ class TestCollection:
 
         # Assert data is turned right into a list of Items.
         assert collection.asItems()[0].name() == 'Nombre del objeto'
+
+        # Assert data is skipped if all the fields are empty.
+        assert collection.asItems()[1].name() == 'Nombre del objeto 2'
 
         # Assert empty list is returned when there's no data.
         collection.googleData = []
