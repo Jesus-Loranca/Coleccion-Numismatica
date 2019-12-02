@@ -33,3 +33,9 @@ class TestSite:
 
         # Check site page URL when language is en and page is not home.
         assert site.pageURL('en') == 'http://127.0.0.1:5000/en/random-text'
+
+    def test_site_domain_returns_expected_string(self):
+        site = Site('es', '')
+
+        # Check site domain returns dev domain url.
+        assert site.domain() == 'http://127.0.0.1:5000/'

@@ -1,3 +1,4 @@
+import os
 from helpers.utilities import stringToURL
 
 class Site:
@@ -21,6 +22,10 @@ class Site:
             return 'Numismatic Collection'
 
         return 'Colección Numismática'
+
+    # Returns the site domain taken from the env vars.
+    def domain(self):
+        return os.environ.get('domain')
 
     # Builds the page URL for the language change buttons.
     def pageURL(self, language = 'es'):

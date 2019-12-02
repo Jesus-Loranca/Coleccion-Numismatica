@@ -26,11 +26,11 @@
         <tbody>
             {% for item in items %}
                 <tr class="row">
-                    <td class="es col-3"><a href="{{ 'http://127.0.0.1:5000/' ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.frontImage() }}" alt="Imagen de la cara: {{ item.name() }}"></a></td>
-                    <td class="en col-3"><a href="{{ 'http://127.0.0.1:5000/' ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.backImage() }}" alt="Imagen del dorso: {{ item.name() }}"></a></td>
+                    <td class="es col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.frontImage() }}" alt="Imagen de la cara: {{ item.name() }}"></a></td>
+                    <td class="en col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.backImage() }}" alt="Front image: {{ item.name() }}"></a></td>
 
-                    <td class="es col-3"><a href="{{ 'http://127.0.0.1:5000/' ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
-                    <td class="en col-3"><a href="{{ 'http://127.0.0.1:5000/' ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
+                    <td class="es col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
+                    <td class="en col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
 
                     <td class="es col-2">{{ item.country() }}</td>
                     <td class="en col-2">{{ item.country() }}</td>
