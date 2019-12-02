@@ -57,7 +57,8 @@ class Collection:
         collectionAsItems = []
 
         for item in self.googleData:
-            collectionAsItems.append(Item(self.language, item))
+            if not all(property == '' for property in item.values()):
+                collectionAsItems.append(Item(self.language, item))
 
         return collectionAsItems
 

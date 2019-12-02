@@ -63,16 +63,16 @@ class TestCollection:
         collection.googleData = data
 
         # Assert expected item by Spanish name.
-        assert collection.find('Nombre del objeto 2') == data[1]
+        assert collection.find('Nombre del objeto 2') == data[2]
 
         # Assert expected item by English name.
-        assert collection.find('Item name 2') == data[1]
+        assert collection.find('Item name 2') == data[2]
 
         # Assert empty dict by wrong name.
         assert collection.find('Wrong') == {}
 
         # Assert expected value from a different field.
-        assert collection.find('nombre-del-objeto-2', 'Link') == data[1]
+        assert collection.find('nombre-del-objeto-2', 'Link') == data[2]
 
         # Assert empty dict from a different field.
         assert collection.find('Wrong', 'Link de la Ceca | Mint\'s Link') == {}
