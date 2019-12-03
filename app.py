@@ -23,6 +23,13 @@ def home(language = 'es'):
 
     return render_template('home.html', site = site, items = items)
 
+@app.route('/<string:language>/links-interesantes/')
+@app.route('/<string:language>/interesting-links/')
+def interestingLinks(language = 'es'):
+    site = Site(language, splitByLanguage('Links Interesantes | Interesting Links', language))
+
+    return render_template('interesting-links.html', site = site)
+
 @app.route('/<string:language>/<string:item>/')
 def item(language, item):
     site = Site(language, item)
