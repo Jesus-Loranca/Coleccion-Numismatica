@@ -7,13 +7,6 @@ from models.item import Item
 from helpers.utilities import splitByLanguage
 app = Flask(__name__)
 
-@app.route('/test')
-def test():
-    site = Site('es', 'test')
-    collection = Collection(site)
-
-    return print(collection.all())
-
 @app.route('/')
 @app.route('/<string:language>/')
 def home(language = 'es'):
@@ -30,6 +23,14 @@ def interestingLinks(language = 'es'):
 
     return render_template('interesting-links.html', site = site)
 
+@app.route('/<string:language>/añadir/')
+@app.route('/<string:language>/add/')
+def api_staff(language = 'es'):
+    site = Site(language, splitByLanguage('Añadir un Objeto a la Colección | Add an Item to the Collection', language))
+    item = request.args.get('name', False)
+
+    return render_template('form.html', site = site)
+
 @app.route('/<string:language>/<string:item>/')
 def item(language, item):
     site = Site(language, item)
@@ -38,22 +39,6 @@ def item(language, item):
     site.title = item.name()
 
     return render_template('item.html', site = site, item = item)
-
-# @app.route('/api/staff/')
-# def api_staff():
-#     person = request.args.get('name', False)
-
-#     with open('staff.json') as json_file:
-
-#         data = json.load(json_file)
-#     if person:
-#         data = [
-#             p for p in data
-#             if p['name'].lower() == person.lower()
-#         ]
-#         return jsonify(data)
-#     else:
-#         return jsonify(data)
 
 if __name__ == "__main__" and os.environ.get('environment') == 'local':
     # Debugger is nice for development as it restarts the server for you.
