@@ -34,4 +34,4 @@ class Site:
         if page == 'inicio' or page == 'home':
             page = ''
 
-        return 'http://127.0.0.1:5000/' + language + '/' + stringToURL(page)
+        return os.environ.get('domain') + language + '/' + stringToURL(page)
