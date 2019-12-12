@@ -5,11 +5,17 @@
     <h1 class="en">Add an Item to the Collection</h1>
 
     <div>
-        <form action="/form" method="post">
+        <form method="POST">
             <fieldset>
                 <legend class="es">Tipo</legend>
                 <legend class="en">Type</legend>
-                <input type="text" name="name">
+                <select name="type">
+                    <option value="Moneda | Coin" class="es">Moneda</option>
+                    <option value="Billete | Banknote" class="es">Billete</option>
+
+                    <option value="Moneda | Coin" class="en">Coin</option>
+                    <option value="Billete | Banknote" class="en">Banknote</option>
+                </select>
             </fieldset>
 
             <fieldset>
@@ -21,68 +27,89 @@
             <fieldset>
                 <legend class="es">Imagen Cara</legend>
                 <legend class="en">Front Image</legend>
-                <input type="text" name="name">
+                <input type="text" name="front">
             </fieldset>
 
             <fieldset>
                 <legend class="es">Imagen Dorso</legend>
                 <legend class="en">Back Image</legend>
-                <input type="text" name="name">
+                <input type="text" name="back">
             </fieldset>
 
             <fieldset>
                 <legend class="es">País</legend>
                 <legend class="en">Country</legend>
-                <input type="text" name="name">
+                <input type="text" name="country">
             </fieldset>
 
             <fieldset>
                 <legend class="es">Denominación</legend>
                 <legend class="en">Denomination</legend>
-                <input type="text" name="name">
+                <input type="text" name="denomination">
             </fieldset>
 
             <fieldset>
                 <legend class="es">Fecha de fabricación</legend>
                 <legend class="en">Date of issue</legend>
-                <input type="text" name="name">
+                <input type="text" name="date">
             </fieldset>
 
             <fieldset>
                 <legend class="es">Año de la serie</legend>
                 <legend class="en">Series number</legend>
-                <input type="text" name="name">
+                <input type="text" name="series">
             </fieldset>
 
             <fieldset>
                 <legend class="es">Número de Serie</legend>
                 <legend class="en">Serial numbers</legend>
-                <input type="text" name="name">
+                <input type="text" name="serial">
             </fieldset>
 
             <fieldset>
                 <legend class="es">Estado</legend>
                 <legend class="en">Grading</legend>
-                <input type="text" name="name">
+                <select name="grading">
+                    <option value="PROFF (Pruebas) | PRF (Proof)" class="es">PROFF (Pruebas)</option>
+                    <option value="SC (Sin Circular) | UNC (Uncirculated)" class="es">SC (Sin Circular)</option>
+                    <option value="EBC (Excelente Buena Conservación) | EF/XF (Extremely Fine)" class="es">EBC (Excelente Buena Conservación)</option>
+                    <option value="MBC (Muy Buenqa Conservación) | VF (Very Fine)" class="es">MBC (Muy Buenqa Conservación)</option>
+                    <option value="BC+ (Buena Conservación Plus) | F (Fine)" class="es">BC+ (Buena Conservación Plus)</option>
+                    <option value="BC (Buena Conservación) | VG (Very Good)" class="es">BC (Buena Conservación)</option>
+                    <option value="RC (Regular Conservación) | G (Good)" class="es">RC (Regular Conservación)</option>
+                    <option value="MC (Mala Conservación) | PR (Poor)" class="es">MC (Mala Conservación)</option>
+
+                    <option value="PROFF (Pruebas) | PRF (Proof)" class="en">PRF (Proof)</option>
+                    <option value="SC (Sin Circular) | UNC (Uncirculated)" class="en">UNC (Uncirculated)</option>
+                    <option value="EBC (Excelente Buena Conservación) | EF/XF (Extremely Fine)" class="en">EF/XF (Extremely Fine)</option>
+                    <option value="MBC (Muy Buenqa Conservación) | VF (Very Fine)" class="en">VF (Very Fine)</option>
+                    <option value="BC+ (Buena Conservación Plus) | F (Fine)" class="en">F (Fine)</option>
+                    <option value="BC (Buena Conservación) | VG (Very Good)" class="en">VG (Very Good)</option>
+                    <option value="RC (Regular Conservación) | G (Good)" class="en">G (Good)</option>
+                    <option value="MC (Mala Conservación) | PR (Poor)" class="en">PR (Poor)</option>
+                </select>
             </fieldset>
 
             <fieldset>
                 <legend class="es">Valor</legend>
                 <legend class="en">Value</legend>
-                <input type="text" name="name">
+                <input type="text" name="value">
             </fieldset>
 
             <fieldset>
                 <legend class="es">Coste</legend>
                 <legend class="en">Cost</legend>
-                <input type="text" name="name">
+                <input type="text" name="cost">
             </fieldset>
 
             <fieldset>
                 <legend class="es">Link de la Ceca</legend>
                 <legend class="en">Mint's Link</legend>
-                <input type="text" name="name">
+                <input type="text" name="mint">
             </fieldset>
+
+            <input type="submit" class="es" value="Enviar">
+            <input type="submit" class="en" value="Submit">
         </form>
     </div>
 {% endblock %}
