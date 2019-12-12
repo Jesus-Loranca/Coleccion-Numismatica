@@ -24,7 +24,9 @@ def interestingLinks(language = 'es'):
     return render_template('interesting-links.html', site = site)
 
 @app.route('/<string:language>/añadir/')
+@app.route('/<string:language>/anadir-un-objeto-a-la-coleccion/')
 @app.route('/<string:language>/add/')
+@app.route('/<string:language>/add-an-item-to-the-collection/')
 def api_staff(language = 'es'):
     site = Site(language, splitByLanguage('Añadir un Objeto a la Colección | Add an Item to the Collection', language))
     item = request.args.get('name', False)
