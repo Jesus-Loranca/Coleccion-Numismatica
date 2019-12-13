@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, request, render_template
 from models.site import Site
 from models.collection import Collection
 from models.item import Item
@@ -23,10 +23,10 @@ def interestingLinks(language = 'es'):
 
     return render_template('interesting-links.html', site = site)
 
-@app.route('/<string:language>/añadir/')
-@app.route('/<string:language>/anadir-un-objeto-a-la-coleccion/')
-@app.route('/<string:language>/add/')
-@app.route('/<string:language>/add-an-item-to-the-collection/')
+@app.route('/<string:language>/añadir/', methods=['POST'])
+@app.route('/<string:language>/anadir-un-objeto-a-la-coleccion/', methods=['POST'])
+@app.route('/<string:language>/add/', methods=['POST'])
+@app.route('/<string:language>/add-an-item-to-the-collection/', methods=['POST'])
 def api_staff(language = 'es'):
     site = Site(language, splitByLanguage('Añadir un Objeto a la Colección | Add an Item to the Collection', language))
     item = request.args.get('name', False)
