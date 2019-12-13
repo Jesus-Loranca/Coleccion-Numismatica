@@ -23,13 +23,14 @@ def interestingLinks(language = 'es'):
 
     return render_template('interesting-links.html', site = site)
 
-@app.route('/<string:language>/añadir/', methods=['POST'])
-@app.route('/<string:language>/anadir-un-objeto-a-la-coleccion/', methods=['POST'])
-@app.route('/<string:language>/add/', methods=['POST'])
-@app.route('/<string:language>/add-an-item-to-the-collection/', methods=['POST'])
-def api_staff(language = 'es'):
+@app.route('/<string:language>/añadir/', methods=['GET', 'POST'])
+@app.route('/<string:language>/anadir-un-objeto-a-la-coleccion/', methods=['GET', 'POST'])
+@app.route('/<string:language>/add/', methods=['GET', 'POST'])
+@app.route('/<string:language>/add-an-item-to-the-collection/', methods=['GET', 'POST'])
+def form(language = 'es'):
     site = Site(language, splitByLanguage('Añadir un Objeto a la Colección | Add an Item to the Collection', language))
-    item = request.args.get('name', False)
+
+    print(request.args.get('type'))
 
     return render_template('form.html', site = site)
 
