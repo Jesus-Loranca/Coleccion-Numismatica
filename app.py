@@ -30,7 +30,8 @@ def interestingLinks(language = 'es'):
 def form(language = 'es'):
     site = Site(language, splitByLanguage('Añadir un Objeto a la Colección | Add an Item to the Collection', language))
 
-    print(request.args.get('type'))
+    if request.method == 'POST':
+      print(request.form)
 
     return render_template('form.html', site = site)
 
