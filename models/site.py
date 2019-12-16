@@ -31,7 +31,7 @@ class Site:
     def pageURL(self, language = 'es'):
         page = self.title.lower()
 
-        if page == 'inicio' or page == 'home':
-            page = ''
+        if page == '' or page == 'inicio' or page == 'home':
+            return os.environ.get('domain') + language + '/'
 
-        return os.environ.get('domain') + language + '/' + stringToURL(page)
+        return os.environ.get('domain') + language + '/' + stringToURL(page) + '/'
