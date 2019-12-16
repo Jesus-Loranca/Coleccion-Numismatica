@@ -33,6 +33,8 @@ def form(language = 'es'):
     if request.method == 'POST':
       print(request.form)
 
+      return render_template('form-result.html', site = site)
+
     return render_template('form.html', site = site)
 
 @app.route('/<string:language>/<string:item>/')
