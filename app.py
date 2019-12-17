@@ -29,11 +29,28 @@ def interestingLinks(language = 'es'):
 @app.route('/<string:language>/add-an-item-to-the-collection/', methods=['GET', 'POST'])
 def form(language = 'es'):
     site = Site(language, splitByLanguage('Añadir un Objeto a la Colección | Add an Item to the Collection', language))
+    collection = Collection(site)
 
     if request.method == 'POST':
-      print(request.form)
+        insertData = [
+            request.form.get('type'),
+            request.form.get('name'),
+            request.form.get('front'),
+            request.form.get('back'),
+            request.form.get('country'),
+            request.form.get('denomination'),
+            request.form.get('series'),
+            request.form.get('serial'),
+            request.form.get('grading'),
+            request.form.get('value'),
+            request.form.get('cost'),
+            # request.form.get('name'), -> Link needs to be generated from the name
+            request.form.get('mint'),
+        ]
+        rowCount = len(collection.googleData)
+        collection.sheet.insert_row(insertData, rowCount + 10)
 
-      return render_template('form-result.html', site = site)
+        return render_template('form-result.html', site = site)
 
     return render_template('form.html', site = site)
 
