@@ -18,7 +18,7 @@ class Item:
 
     # Returns the item back image URL.
     def backImage(self):
-        return splitByLanguage(self.googleData['Imagen Dorso | Back Image'], self.language)
+        return splitByLanguage(self.googleData['Imagen Reverso | Back Image'], self.language)
 
     # Returns the item cost when it was initially bought.
     def cost(self):
@@ -38,7 +38,7 @@ class Item:
 
     # Returns the item front image URL.
     def frontImage(self):
-        return splitByLanguage(self.googleData['Imagen Cara | Front Image'], self.language)
+        return splitByLanguage(self.googleData['Imagen Anverso | Front Image'], self.language)
 
     # Returns the item grading.
     def grading(self):
