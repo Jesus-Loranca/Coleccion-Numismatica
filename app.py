@@ -5,6 +5,8 @@ from models.site import Site
 from models.collection import Collection
 from models.item import Item
 from helpers.utilities import splitByLanguage
+from helpers.utilities import prepareItemLink
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -39,16 +41,18 @@ def form(language = 'es'):
             request.form.get('back'),
             request.form.get('country'),
             request.form.get('denomination'),
+            request.form.get('date'),
             request.form.get('series'),
             request.form.get('serial'),
             request.form.get('grading'),
             request.form.get('value'),
             request.form.get('cost'),
-            # request.form.get('name'), -> Link needs to be generated from the name
+            prepareItemLink(request.form.get('name')),
             request.form.get('mint'),
         ]
+
         rowCount = len(collection.googleData)
-        collection.sheet.insert_row(insertData, rowCount + 10)
+        collection.sheet.insert_row(insertData, rowCount + 1)
 
         return render_template('form-result.html', site = site)
 
