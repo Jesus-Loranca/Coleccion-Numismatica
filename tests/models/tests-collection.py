@@ -7,8 +7,8 @@ def googleData():
         {
             'Tipo | Type': '',
             'Nombre | Name': '',
-            'Imagen Cara | Front Image': '',
-            'Imagen Dorso | Back Image': '',
+            'Imagen Anverso | Front Image': '',
+            'Imagen Reverso | Back Image': '',
             'País | Country': '',
             'Denominación | Denomination': '',
             'Fecha de fabricación | Date of issue': '',
@@ -23,8 +23,8 @@ def googleData():
         {
             'Tipo | Type': 'Moneda | Coin',
             'Nombre | Name': 'Nombre del objeto | Item name',
-            'Imagen Cara | Front Image': '',
-            'Imagen Dorso | Back Image': '',
+            'Imagen Anverso | Front Image': '',
+            'Imagen Reverso | Back Image': '',
             'País | Country': 'España | Spain',
             'Denominación | Denomination': '2 EUR',
             'Fecha de fabricación | Date of issue': '1992',
@@ -39,8 +39,8 @@ def googleData():
         {
             'Tipo | Type': 'Moneda | Coin',
             'Nombre | Name': 'Nombre del objeto 2 | Item name 2',
-            'Imagen Cara | Front Image': '',
-            'Imagen Dorso | Back Image': '',
+            'Imagen Anverso | Front Image': '',
+            'Imagen Reverso | Back Image': '',
             'País | Country': 'Reino Unido | United Kingdom',
             'Denominación | Denomination': '2 GBP',
             'Fecha de fabricación | Date of issue': '1996',

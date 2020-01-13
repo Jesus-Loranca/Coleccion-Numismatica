@@ -6,8 +6,8 @@ def googleData():
     return {
         'Tipo | Type': 'Moneda | Coin',
         'Nombre | Name': 'Nombre del objeto | Item name',
-        'Imagen Cara | Front Image': '',
-        'Imagen Dorso | Back Image': '',
+        'Imagen Anverso | Front Image': '',
+        'Imagen Reverso | Back Image': '',
         'País | Country': 'Reino Unido | United Kingdom',
         'Denominación | Denomination': '2 EUR',
         'Fecha de fabricación | Date of issue': '1992',
@@ -41,10 +41,10 @@ class TestItem:
         itemTestsWrapper('name', 'Nombre | Name')
 
     def test_item_returns_expected_front_image(self):
-        itemTestsWrapper('frontImage', 'Imagen Cara | Front Image')
+        itemTestsWrapper('frontImage', 'Imagen Anverso | Front Image')
 
     def test_item_returns_expected_back_image(self):
-        itemTestsWrapper('backImage', 'Imagen Dorso | Back Image')
+        itemTestsWrapper('backImage', 'Imagen Reverso | Back Image')
 
     def test_item_returns_expected_country(self):
         itemTestsWrapper('country', 'País | Country')
