@@ -6,11 +6,13 @@ def googleData():
     return {
         'Tipo | Type': 'Moneda | Coin',
         'Nombre | Name': 'Nombre del objeto | Item name',
-        'Imagen Anverso | Front Image': '',
-        'Imagen Reverso | Back Image': '',
+        'Imagen Anverso | Obverse Image': '',
+        'Imagen Reverso | Reverse Image': '',
         'País | Country': 'Reino Unido | United Kingdom',
         'Denominación | Denomination': '2 EUR',
         'Fecha de fabricación | Date of issue': '1992',
+        'Diámetro | Diameter': '29 mm',
+        'Composición | Composition': 'Oro 999.9 | Gold 999.9',
         'Año de la serie | Series number': '',
         'Número de Serie | Serial numbers': '',
         'Estado | Grading': 'EBC (Extraordinariamente Bien Conservada) | EF (Extremely Fine)',
@@ -41,10 +43,10 @@ class TestItem:
         itemTestsWrapper('name', 'Nombre | Name')
 
     def test_item_returns_expected_front_image(self):
-        itemTestsWrapper('frontImage', 'Imagen Anverso | Front Image')
+        itemTestsWrapper('frontImage', 'Imagen Anverso | Obverse Image')
 
     def test_item_returns_expected_back_image(self):
-        itemTestsWrapper('backImage', 'Imagen Reverso | Back Image')
+        itemTestsWrapper('backImage', 'Imagen Reverso | Reverse Image')
 
     def test_item_returns_expected_country(self):
         itemTestsWrapper('country', 'País | Country')
@@ -54,6 +56,12 @@ class TestItem:
 
     def test_item_returns_expected_date(self):
         itemTestsWrapper('date', 'Fecha de fabricación | Date of issue')
+
+    def test_item_returns_expected_diameter(self):
+        itemTestsWrapper('diameter', 'Diámetro | Diameter')
+
+    def test_item_returns_expected_composition(self):
+        itemTestsWrapper('composition', 'Composición | Composition')
 
     def test_item_returns_expected_series_number(self):
         itemTestsWrapper('seriesNumber', 'Año de la serie | Series number')
