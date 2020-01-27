@@ -8,8 +8,8 @@
         </div>
 
         <div class="en col-12 col-md-6">
-            <img src="{{ item.frontImage() }}" alt="Front image: {{ item.name() }}">
-            <img src="{{ item.backImage() }}" alt="Back image: {{ item.name() }}">
+            <img src="{{ item.frontImage() }}" alt="Obverse image: {{ item.name() }}">
+            <img src="{{ item.backImage() }}" alt="Reverse image: {{ item.name() }}">
         </div>
 
         <div class="col-12 col-md-6">
@@ -40,6 +40,14 @@
                 <p class="es col-12 col-md-6 col-lg-3">Fecha de fabricación:</p>
                 <p class="en col-12 col-md-6 col-lg-3">Date of issue: </p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.date() }}</p>
+
+                <p class="es col-12 col-md-6 col-lg-3">Diámetro:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Diameter: </p>
+                <p class="col-12 col-md-6 col-lg-9">{{ item.diameter() }}</p>
+
+                <p class="es col-12 col-md-6 col-lg-3">Composición:</p>
+                <p class="en col-12 col-md-6 col-lg-3">Composition: </p>
+                <p class="col-12 col-md-6 col-lg-9">{{ item.composition() }}</p>
 
                 <p class="es col-12 col-md-6 col-lg-3">Año de la serie:</p>
                 <p class="en col-12 col-md-6 col-lg-3">Series number:</p>
