@@ -16,10 +16,6 @@ class Item:
         # {field:value, field:value}, {field:value, field:value}, {...
         self.googleData = googleData
 
-    # Returns the item back image URL.
-    def backImage(self):
-        return splitByLanguage(self.googleData['Imagen Reverso | Reverse Image'], self.language)
-
     # Returns the item composition.
     def composition(self):
         return splitByLanguage(self.googleData['Composición | Composition'], self.language)
@@ -44,10 +40,6 @@ class Item:
     def diameter(self):
         return splitByLanguage(self.googleData['Diámetro | Diameter'], self.language)
 
-    # Returns the item front image URL.
-    def frontImage(self):
-        return splitByLanguage(self.googleData['Imagen Anverso | Obverse Image'], self.language)
-
     # Returns the item grading.
     def grading(self):
         return splitByLanguage(self.googleData['Estado | Grading'], self.language)
@@ -63,6 +55,14 @@ class Item:
     # Returns the item name.
     def name(self):
         return splitByLanguage(self.googleData['Nombre | Name'], self.language)
+
+    # Returns the item obverse image URL.
+    def obverseImage(self):
+        return splitByLanguage(self.googleData['Imagen Anverso | Obverse Image'], self.language)
+
+    # Returns the item reverse image URL.
+    def reverseImage(self):
+        return splitByLanguage(self.googleData['Imagen Reverso | Reverse Image'], self.language)
 
     # Returns the item serial number.
     # Only bank notes have one.

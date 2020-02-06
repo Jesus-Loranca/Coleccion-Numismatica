@@ -25,13 +25,13 @@ class Site:
 
     # Returns the site domain taken from the env vars.
     def domain(self):
-        return os.environ.get('domain')
+        return os.getenv('domain')
 
     # Builds the page URL for the language change buttons.
     def pageURL(self, language = 'es'):
         page = self.title.lower()
 
         if page == '' or page == 'inicio' or page == 'home':
-            return os.environ.get('domain') + language + '/'
+            return os.getenv('domain') + language + '/'
 
-        return os.environ.get('domain') + language + '/' + stringToURL(page) + '/'
+        return os.getenv('domain') + language + '/' + stringToURL(page) + '/'

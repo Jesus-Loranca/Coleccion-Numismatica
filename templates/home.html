@@ -26,8 +26,8 @@
         <tbody>
             {% for item in items %}
                 <tr class="row">
-                    <td class="es col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.frontImage() }}" alt="Imagen del anverso: {{ item.name() }}"></a></td>
-                    <td class="en col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.backImage() }}" alt="Obverse image: {{ item.name() }}"></a></td>
+                    <td class="es col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.obverseImage() }}" alt="Imagen del Anverso: {{ item.name() }}"></a></td>
+                    <td class="en col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.reverseImage() }}" alt="Obverse Image: {{ item.name() }}"></a></td>
 
                     <td class="es col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
                     <td class="en col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
