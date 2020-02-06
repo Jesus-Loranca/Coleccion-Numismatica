@@ -69,6 +69,6 @@ def item(language, item):
 
     return render_template('item.html', site = site, item = item)
 
-if __name__ == "__main__" and os.environ.get('environment') == 'local':
+if __name__ == "__main__" and os.getenv('environment') == 'local':
     # Debugger is nice for development as it restarts the server for you.
     app.run(debug = True)
