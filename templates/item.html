@@ -3,13 +3,13 @@
 {% block content %}
     <div class="row">
         <div class="es col-12 col-md-6">
-            <img src="{{ item.frontImage() }}" alt="Imagen del anverso: {{ item.name() }}">
-            <img src="{{ item.backImage() }}" alt="Imagen del reverso: {{ item.name() }}">
+            <img src="{{ item.obverseImage() }}" alt="Imagen del anverso: {{ item.name() }}">
+            <img src="{{ item.reverseImage() }}" alt="Imagen del reverso: {{ item.name() }}">
         </div>
 
         <div class="en col-12 col-md-6">
-            <img src="{{ item.frontImage() }}" alt="Obverse image: {{ item.name() }}">
-            <img src="{{ item.backImage() }}" alt="Reverse image: {{ item.name() }}">
+            <img src="{{ item.obverseImage() }}" alt="Obverse image: {{ item.name() }}">
+            <img src="{{ item.reverseImage() }}" alt="Reverse image: {{ item.name() }}">
         </div>
 
         <div class="col-12 col-md-6">

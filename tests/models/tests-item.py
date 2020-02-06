@@ -43,10 +43,10 @@ class TestItem:
         itemTestsWrapper('name', 'Nombre | Name')
 
     def test_item_returns_expected_front_image(self):
-        itemTestsWrapper('frontImage', 'Imagen Anverso | Obverse Image')
+        itemTestsWrapper('obverseImage', 'Imagen Anverso | Obverse Image')
 
     def test_item_returns_expected_back_image(self):
-        itemTestsWrapper('backImage', 'Imagen Reverso | Reverse Image')
+        itemTestsWrapper('reverseImage', 'Imagen Reverso | Reverse Image')
 
     def test_item_returns_expected_country(self):
         itemTestsWrapper('country', 'País | Country')
