@@ -13,6 +13,7 @@ flask = "*"
 gspread = "*"
 oauth2client = "*"
 unidecode = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
