@@ -9,11 +9,20 @@ class Collection:
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 
     # Private key is being read wrong from the .env so its value have to be replaced
+    # Locally spaces are being translated as \\\\n and heroku translates them as \\n
+    privateKey = os.getenv('private_key')
+
+    if os.getenv('environment') == 'local':
+        privateKey = privateKey.replace('\\\\n', '\n')
+
+    if os.getenv('environment') == 'production':
+         privateKey = privateKey.replace('\\n', '\n')
+
     credentialsFile = {
         'type':                        os.getenv('type'),
         'project_id':                  os.getenv('project_id'),
         'private_key_id':              os.getenv('private_key_id'),
-        'private_key':                 os.getenv('private_key').replace('\\\\n', '\n'),
+        'private_key':                 privateKey,
         'client_email':                os.getenv('client_email'),
         'client_id':                   os.getenv('client_id'),
         'auth_uri':                    os.getenv('auth_uri'),
