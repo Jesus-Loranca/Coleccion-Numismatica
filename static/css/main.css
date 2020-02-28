@@ -1,6 +1,8 @@
 /* Languages Nav */
 
 .flag {
-    max-height: 25px;
-    max-width: 50px;
+    height: 35px;
+    width: 35px;
+    border: solid lightgrey 1px;
+    border-radius: 50%;
 }
