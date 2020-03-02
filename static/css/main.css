@@ -2,6 +2,35 @@
 
 /* Languages Nav */
 
+.flags {
+    max-width: 100px;
+}
+
+@media only screen and (max-width: 990px) {
+    .flags ul {
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 990px) {
+    .flags ul {
+        display: flex;
+    }
+}
+
+
+.flags li {
+    display: inline-block;
+}
+
+@media only screen and (max-width: 990px) {
+    .flags {
+        position: absolute;
+        top: 2px;
+        right: 90px;
+    }
+}
+
 .flag {
     height: 35px;
     width: 35px;
