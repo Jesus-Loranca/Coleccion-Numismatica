@@ -26,6 +26,8 @@ def interestingLinks(language = 'es'):
     return render_template('interesting-links.html', site = site)
 
 @app.route('/<string:language>/añadir/', methods=['GET', 'POST'])
+@app.route('/<string:language>/anadir/', methods=['GET', 'POST'])
+@app.route('/<string:language>/añadir-un-objeto-a-la-coleccion/', methods=['GET', 'POST'])
 @app.route('/<string:language>/anadir-un-objeto-a-la-coleccion/', methods=['GET', 'POST'])
 @app.route('/<string:language>/add/', methods=['GET', 'POST'])
 @app.route('/<string:language>/add-an-item-to-the-collection/', methods=['GET', 'POST'])
