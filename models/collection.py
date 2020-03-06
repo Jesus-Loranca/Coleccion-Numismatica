@@ -20,6 +20,9 @@ class Collection:
     # Google Spreadsheet information.
     googleData = ''
 
+    # SmartFile connection.
+    smartFileClient = ''
+
     # Constructor.
     def __init__(self, site):
         self.site = site
@@ -97,8 +100,9 @@ class Collection:
 
     # Returns the SmartFile connection to be able to use it later on for images.
     def smartFile(self):
-        smartFile = BasicClient(os.getenv('smartfile_api_key'), os.getenv('smartfile_api_password'))
-        print(smartFile.get('/ping'))
+        self.smartFileClient = BasicClient(os.getenv('smartfile_api_key'), os.getenv('smartfile_api_password'))
+
+        self.smartFileClient.put('/path/oper/mkdir/Items/Coin/United Kingdom/1997')
 
     # Returns the collection total value converted into the right country currency.
     def totalValue(self):
