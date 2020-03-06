@@ -12,7 +12,7 @@
     }
 }
 
-@media only screen and (min-width: 990px) {
+@media only screen and (min-width: 991px) {
     .flags ul {
         display: flex;
     }
@@ -42,4 +42,10 @@
 
 h1 {
     margin: 5% 0 !important;
+}
+
+/****** Form ******/
+
+fieldset {
+    margin: 10% 0 !important;
 }
