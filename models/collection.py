@@ -1,6 +1,7 @@
 import os
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from smartfile import BasicClient
 from models.site import Site
 from models.item import Item
 
@@ -59,6 +60,11 @@ class Collection:
         self.site = site
         self.language = self.site.language
 
+        # Retrieves the google spreadsheet data.
+
+        # Conects to smartfile to retrieve the images.
+        self.smartFile()
+
         if self.language == 'en':
             self.currency = 'GBP'
 
@@ -84,6 +90,11 @@ class Collection:
                 if name in item[field]
             ), {}
         )
+
+    # Returns the smartfile connection to be able to use it later on for images.
+    def smartFile(self):
+        smartFile = BasicClient(os.getenv('smartfile_api_key'), os.getenv('smartfile_api_password'))
+        print(smartFile.get('/ping'))
 
     # Returns the collection total value converted into the right country currency.
     def totalValue(self):
