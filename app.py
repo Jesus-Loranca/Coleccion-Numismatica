@@ -33,7 +33,20 @@ def form(language = 'es'):
     site = Site(language, splitByLanguage('Añadir un Objeto a la Colección | Add an Item to the Collection', language))
     collection = Collection(site)
 
+    # Ensure the form is being sent.
     if request.method == 'POST':
+        # Upload the images first to SmartFile and once we get the URLs for the images
+        # we will update our Google Spreadsheet to include that URLs.
+        if request.form.get('obverse') or request.form.get('reverse'):
+            return render_template('form-error.html', site = site)
+        else:
+            # filename = secure_filename(request.form.get('obverse'))
+            # collection.smartFileClient.put('/path/oper/mkdir/Items/Coin/United Kingdom/1997')
+
+            obverse = ''
+            reverse = ''
+
+        # Insert our data in the Google Spreadsheet.
         insertData = [
             request.form.get('type'),
             request.form.get('name'),
@@ -56,7 +69,7 @@ def form(language = 'es'):
         rowCount = len(collection.googleData)
         collection.sheet.insert_row(insertData, rowCount + 1)
 
-        return render_template('form-result.html', site = site)
+        return render_template('form-success.html', site = site)
 
     return render_template('form.html', site = site)
 

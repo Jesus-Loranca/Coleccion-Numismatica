@@ -102,8 +102,6 @@ class Collection:
     def smartFile(self):
         self.smartFileClient = BasicClient(os.getenv('smartfile_api_key'), os.getenv('smartfile_api_password'))
 
-        self.smartFileClient.put('/path/oper/mkdir/Items/Coin/United Kingdom/1997')
-
     # Returns the collection total value converted into the right country currency.
     def totalValue(self):
         return self.currency
