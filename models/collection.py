@@ -17,6 +17,9 @@ class Collection:
     # Defaults to EUR as the default view would be Spanish.
     currency = 'EUR'
 
+    # Google Spreadsheet connection.
+    googleSheet = ''
+
     # Google Spreadsheet information.
     googleData = ''
 
@@ -93,10 +96,10 @@ class Collection:
         client = gspread.authorize(credentials)
 
         # Find a workbook by name and open the first sheet.
-        sheet = client.open('Colección Numismática').sheet1
+        self.googleSheet = client.open('Colección Numismática').sheet1
 
         # Extract the collection values.
-        self.googleData = sheet.get_all_records()
+        self.googleData = self.googleSheet.get_all_records()
 
     # Returns the SmartFile connection to be able to use it later on for images.
     def smartFile(self):
