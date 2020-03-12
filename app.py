@@ -33,30 +33,54 @@ def form(language = 'es'):
     site = Site(language, splitByLanguage('Añadir un Objeto a la Colección | Add an Item to the Collection', language))
     collection = Collection(site)
 
+    # Ensure the form is being sent.
     if request.method == 'POST':
-        insertData = [
-            request.form.get('type'),
-            request.form.get('name'),
-            request.form.get('obverse'),
-            request.form.get('reverse'),
-            request.form.get('country'),
-            request.form.get('denomination'),
-            request.form.get('date'),
-            request.form.get('diameter'),
-            request.form.get('composition'),
-            request.form.get('series'),
-            request.form.get('serial'),
-            request.form.get('grading'),
-            request.form.get('value'),
-            request.form.get('cost'),
-            prepareItemLink(request.form.get('name')),
-            request.form.get('mint'),
-        ]
+        # Upload the images first to SmartFile and once we get the URLs for the images
+        # we will update our Google Spreadsheet to include that URLs.
+        if not request.files['obverse'] or not request.files['reverse']:
+            return render_template('form-error.html', site = site)
+        else:
+            # Builds the folder structure to store the image.
+            filePath = 'Items/' + splitByLanguage(request.form.get('type'), 'en') + '/' + splitByLanguage(request.form.get('country'), 'en') + '/' + splitByLanguage(request.form.get('date'), 'en')
 
-        rowCount = len(collection.googleData)
-        collection.sheet.insert_row(insertData, rowCount + 1)
+            # Creates the folder if needed.
+            collection.smartFileClient.put('/path/oper/mkdir/' + filePath)
 
-        return render_template('form-result.html', site = site)
+            # Uploads the Obverse and Reverse images.
+            collection.smartFileClient.post('/path/data/' + filePath, file = (request.files['obverse'].filename, request.files['obverse']))
+            collection.smartFileClient.post('/path/data/' + filePath, file = (request.files['reverse'].filename, request.files['reverse']))
+
+            # Generates the href for the images to be saved in the Google Spreadsheet.
+            obverseURL = collection.smartFileClient.post('/link', path = filePath + '/' + request.files['obverse'].filename)
+            reverseURL = collection.smartFileClient.post('/link', path = filePath + '/' + request.files['reverse'].filename)
+
+            if ('href' in obverseURL and 'href' in reverseURL):
+                # Insert our data in the Google Spreadsheet.
+                insertData = [
+                    request.form.get('type'),
+                    request.form.get('name'),
+                    obverseURL['href'] + request.files['obverse'].filename,
+                    reverseURL['href'] + request.files['reverse'].filename,
+                    request.form.get('country'),
+                    request.form.get('denomination'),
+                    request.form.get('date'),
+                    request.form.get('diameter'),
+                    request.form.get('composition'),
+                    request.form.get('series'),
+                    request.form.get('serial'),
+                    request.form.get('grading'),
+                    request.form.get('value'),
+                    request.form.get('cost'),
+                    prepareItemLink(request.form.get('name')),
+                    request.form.get('mint'),
+                ]
+
+                rowCount = len(collection.googleData)
+                collection.googleSheet.insert_row(insertData, rowCount + 1)
+
+                return render_template('form-success.html', site = site)
+            else:
+                return render_template('form-error.html', site = site)
 
     return render_template('form.html', site = site)
 

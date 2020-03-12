@@ -14,6 +14,7 @@ gspread = "*"
 oauth2client = "*"
 unidecode = "*"
 gunicorn = "*"
+smartfile = "*"
 
 [requires]
 python_version = "3.7"
