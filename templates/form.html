@@ -5,7 +5,7 @@
     <h1 class="en">Add an Item to the Collection</h1>
 
     <div class="row">
-        <form action="{{ site.pageURL(site.language) }}" method="POST">
+        <form action="{{ site.pageURL(site.language) }}" method="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend class="es">Tipo</legend>
                 <legend class="en">Type</legend>
@@ -29,13 +29,13 @@
             <fieldset>
                 <legend class="es">Imagen Anverso</legend>
                 <legend class="en">Obverse Image</legend>
-                <input type="text" name="obverse">
+                <input type="file" name="obverse" accept="image/jpeg">
             </fieldset>
 
             <fieldset>
                 <legend class="es">Imagen Reverso</legend>
                 <legend class="en">Reverse Image</legend>
-                <input type="text" name="reverse">
+                <input type="file" name="reverse" accept="image/jpeg">
             </fieldset>
 
             <fieldset>
@@ -86,23 +86,21 @@
                 <select name="grading">
                     <option value="">-</option>
 
-                    <option value="PROFF (Pruebas) | PRF (Proof)" class="es">PROFF (Pruebas)</option>
-                    <option value="SC (Sin Circular) | UNC (Uncirculated)" class="es">SC (Sin Circular)</option>
-                    <option value="EBC (Excelente Buena Conservación) | EF/XF (Extremely Fine)" class="es">EBC (Excelente Buena Conservación)</option>
-                    <option value="MBC (Muy Buenqa Conservación) | VF (Very Fine)" class="es">MBC (Muy Buenqa Conservación)</option>
-                    <option value="BC+ (Buena Conservación Plus) | F (Fine)" class="es">BC+ (Buena Conservación Plus)</option>
-                    <option value="BC (Buena Conservación) | VG (Very Good)" class="es">BC (Buena Conservación)</option>
-                    <option value="RC (Regular Conservación) | G (Good)" class="es">RC (Regular Conservación)</option>
-                    <option value="MC (Mala Conservación) | PR (Poor)" class="es">MC (Mala Conservación)</option>
+                    <option value="PROOF | PROOF" class="es">PROOF</option>
+                    <option value="Sin Circular (SC) | About Uncirculated (UNC)" class="es">Sin Circular (SC)</option>
+                    <option value="Excelente Buena Conservación (EBC) | Extremely Fine (EF/XF)" class="es">Excelente Buena Conservación (EBC)</option>
+                    <option value="Muy Buenqa Conservación (MBC) | Very Fine (VF)" class="es">Muy Buenqa Conservación (MBC)</option>
+                    <option value="Buena Conservación Plus (BC+) | Fine (F)" class="es">Buena Conservación Plus (BC+)</option>
+                    <option value="Buena Conservación (BC) | Very Good (VG)" class="es">Buena Conservación (BC)</option>
+                    <option value="Regular Conservación (RC) | Good (G)" class="es">Regular Conservación (RC)</option>
 
-                    <option value="PROFF (Pruebas) | PRF (Proof)" class="en">PRF (Proof)</option>
-                    <option value="SC (Sin Circular) | UNC (Uncirculated)" class="en">UNC (Uncirculated)</option>
-                    <option value="EBC (Excelente Buena Conservación) | EF/XF (Extremely Fine)" class="en">EF/XF (Extremely Fine)</option>
-                    <option value="MBC (Muy Buenqa Conservación) | VF (Very Fine)" class="en">VF (Very Fine)</option>
-                    <option value="BC+ (Buena Conservación Plus) | F (Fine)" class="en">F (Fine)</option>
-                    <option value="BC (Buena Conservación) | VG (Very Good)" class="en">VG (Very Good)</option>
-                    <option value="RC (Regular Conservación) | G (Good)" class="en">G (Good)</option>
-                    <option value="MC (Mala Conservación) | PR (Poor)" class="en">PR (Poor)</option>
+                    <option value="PROOF | PROOF" class="en">PROOF</option>
+                    <option value="Sin Circular (SC) | About Uncirculated (UNC)" class="en">About Uncirculated (UNC)</option>
+                    <option value="Excelente Buena Conservación (EBC) | Extremely Fine (EF/XF)" class="en">Extremely Fine (EF/XF)</option>
+                    <option value="Muy Buenqa Conservación (MBC) | Very Fine (VF)" class="en">Very Fine (VF)</option>
+                    <option value="Buena Conservación Plus (BC+) | Fine (F)" class="en">Fine (F)</option>
+                    <option value="Buena Conservación (BC) | Very Good (VG)" class="en">Very Good (VG)</option>
+                    <option value="Regular Conservación (RC) | Good (G)" class="en">Good (G)</option>
                 </select>
             </fieldset>
 
