@@ -94,7 +94,7 @@ def form(language = 'es'):
 def item(language, type, country, year, item):
     site = Site(language, item)
     collection = Collection(site)
-    item = Item(language, collection.find(item, 'Link'))
+    item = Item(language, collection.find(type + '/' + country + '/' + year + '/' + item, 'Link'))
     site.title = item.name()
 
     return render_template('item.html', site = site, item = item)
