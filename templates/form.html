@@ -1,129 +1,131 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <h1 class="es">Añadir un Objeto a la Colección</h1>
-    <h1 class="en">Add an Item to the Collection</h1>
+    <div>
+        <h1 class="es">Añadir un Objeto a la Colección</h1>
+        <h1 class="en">Add an Item to the Collection</h1>
 
-    <div class="row">
-        <form action="{{ site.pageURL(site.language) }}" method="POST" enctype="multipart/form-data">
-            <fieldset>
-                <legend class="es">Tipo</legend>
-                <legend class="en">Type</legend>
-                <select name="type">
-                    <option value="">-</option>
+        <div class="row">
+            <form action="{{ site.pageURL(site.language) }}" method="POST" enctype="multipart/form-data">
+                <fieldset>
+                    <legend class="es">Tipo</legend>
+                    <legend class="en">Type</legend>
+                    <select name="type">
+                        <option value="">-</option>
 
-                    <option value="Moneda | Coin" class="es">Moneda</option>
-                    <option value="Billete | Banknote" class="es">Billete</option>
+                        <option value="Moneda | Coin" class="es">Moneda</option>
+                        <option value="Billete | Banknote" class="es">Billete</option>
 
-                    <option value="Moneda | Coin" class="en">Coin</option>
-                    <option value="Billete | Banknote" class="en">Banknote</option>
-                </select>
-            </fieldset>
+                        <option value="Moneda | Coin" class="en">Coin</option>
+                        <option value="Billete | Banknote" class="en">Banknote</option>
+                    </select>
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Nombre</legend>
-                <legend class="en">Name</legend>
-                <input type="text" name="name">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Nombre</legend>
+                    <legend class="en">Name</legend>
+                    <input type="text" name="name">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Imagen Anverso</legend>
-                <legend class="en">Obverse Image</legend>
-                <input type="file" name="obverse" accept="image/jpeg">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Imagen Anverso</legend>
+                    <legend class="en">Obverse Image</legend>
+                    <input type="file" name="obverse" accept="image/jpeg">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Imagen Reverso</legend>
-                <legend class="en">Reverse Image</legend>
-                <input type="file" name="reverse" accept="image/jpeg">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Imagen Reverso</legend>
+                    <legend class="en">Reverse Image</legend>
+                    <input type="file" name="reverse" accept="image/jpeg">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">País</legend>
-                <legend class="en">Country</legend>
-                <input type="text" name="country">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">País</legend>
+                    <legend class="en">Country</legend>
+                    <input type="text" name="country">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Denominación</legend>
-                <legend class="en">Denomination</legend>
-                <input type="text" name="denomination">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Denominación</legend>
+                    <legend class="en">Denomination</legend>
+                    <input type="text" name="denomination">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Fecha de fabricación</legend>
-                <legend class="en">Date of issue</legend>
-                <input type="text" name="date">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Fecha de fabricación</legend>
+                    <legend class="en">Date of issue</legend>
+                    <input type="text" name="date">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Diámetro</legend>
-                <legend class="en">Diameter</legend>
-                <input type="text" name="diameter">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Diámetro</legend>
+                    <legend class="en">Diameter</legend>
+                    <input type="text" name="diameter">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Composición</legend>
-                <legend class="en">Composition</legend>
-                <input type="text" name="composition">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Composición</legend>
+                    <legend class="en">Composition</legend>
+                    <input type="text" name="composition">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Año de la serie</legend>
-                <legend class="en">Series number</legend>
-                <input type="text" name="series">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Año de la serie</legend>
+                    <legend class="en">Series number</legend>
+                    <input type="text" name="series">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Número de Serie</legend>
-                <legend class="en">Serial numbers</legend>
-                <input type="text" name="serial">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Número de Serie</legend>
+                    <legend class="en">Serial numbers</legend>
+                    <input type="text" name="serial">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Estado</legend>
-                <legend class="en">Grading</legend>
-                <select name="grading">
-                    <option value="">-</option>
+                <fieldset>
+                    <legend class="es">Estado</legend>
+                    <legend class="en">Grading</legend>
+                    <select name="grading">
+                        <option value="">-</option>
 
-                    <option value="PROOF | PROOF" class="es">PROOF</option>
-                    <option value="Sin Circular (SC) | About Uncirculated (UNC)" class="es">Sin Circular (SC)</option>
-                    <option value="Excelente Buena Conservación (EBC) | Extremely Fine (EF/XF)" class="es">Excelente Buena Conservación (EBC)</option>
-                    <option value="Muy Buena Conservación (MBC) | Very Fine (VF)" class="es">Muy Buena Conservación (MBC)</option>
-                    <option value="Buena Conservación Plus (BC+) | Fine (F)" class="es">Buena Conservación Plus (BC+)</option>
-                    <option value="Buena Conservación (BC) | Very Good (VG)" class="es">Buena Conservación (BC)</option>
-                    <option value="Regular Conservación (RC) | Good (G)" class="es">Regular Conservación (RC)</option>
+                        <option value="PROOF | PROOF" class="es">PROOF</option>
+                        <option value="Sin Circular (SC) | About Uncirculated (UNC)" class="es">Sin Circular (SC)</option>
+                        <option value="Excelente Buena Conservación (EBC) | Extremely Fine (EF/XF)" class="es">Excelente Buena Conservación (EBC)</option>
+                        <option value="Muy Buena Conservación (MBC) | Very Fine (VF)" class="es">Muy Buena Conservación (MBC)</option>
+                        <option value="Buena Conservación Plus (BC+) | Fine (F)" class="es">Buena Conservación Plus (BC+)</option>
+                        <option value="Buena Conservación (BC) | Very Good (VG)" class="es">Buena Conservación (BC)</option>
+                        <option value="Regular Conservación (RC) | Good (G)" class="es">Regular Conservación (RC)</option>
 
-                    <option value="PROOF | PROOF" class="en">PROOF</option>
-                    <option value="Sin Circular (SC) | About Uncirculated (UNC)" class="en">About Uncirculated (UNC)</option>
-                    <option value="Excelente Buena Conservación (EBC) | Extremely Fine (EF/XF)" class="en">Extremely Fine (EF/XF)</option>
-                    <option value="Muy Buena Conservación (MBC) | Very Fine (VF)" class="en">Very Fine (VF)</option>
-                    <option value="Buena Conservación Plus (BC+) | Fine (F)" class="en">Fine (F)</option>
-                    <option value="Buena Conservación (BC) | Very Good (VG)" class="en">Very Good (VG)</option>
-                    <option value="Regular Conservación (RC) | Good (G)" class="en">Good (G)</option>
-                </select>
-            </fieldset>
+                        <option value="PROOF | PROOF" class="en">PROOF</option>
+                        <option value="Sin Circular (SC) | About Uncirculated (UNC)" class="en">About Uncirculated (UNC)</option>
+                        <option value="Excelente Buena Conservación (EBC) | Extremely Fine (EF/XF)" class="en">Extremely Fine (EF/XF)</option>
+                        <option value="Muy Buena Conservación (MBC) | Very Fine (VF)" class="en">Very Fine (VF)</option>
+                        <option value="Buena Conservación Plus (BC+) | Fine (F)" class="en">Fine (F)</option>
+                        <option value="Buena Conservación (BC) | Very Good (VG)" class="en">Very Good (VG)</option>
+                        <option value="Regular Conservación (RC) | Good (G)" class="en">Good (G)</option>
+                    </select>
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Valor</legend>
-                <legend class="en">Value</legend>
-                <input type="text" name="value">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Valor</legend>
+                    <legend class="en">Value</legend>
+                    <input type="text" name="value">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Coste</legend>
-                <legend class="en">Cost</legend>
-                <input type="text" name="cost">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Coste</legend>
+                    <legend class="en">Cost</legend>
+                    <input type="text" name="cost">
+                </fieldset>
 
-            <fieldset>
-                <legend class="es">Link de la Ceca</legend>
-                <legend class="en">Mint's Link</legend>
-                <input type="text" name="mint">
-            </fieldset>
+                <fieldset>
+                    <legend class="es">Link de la Ceca</legend>
+                    <legend class="en">Mint's Link</legend>
+                    <input type="text" name="mint">
+                </fieldset>
 
-            <input type="submit" class="es" value="Enviar">
-            <input type="submit" class="en" value="Submit">
-        </form>
+                <input type="submit" class="es" value="Enviar">
+                <input type="submit" class="en" value="Submit">
+            </form>
+        </div>
     </div>
 {% endblock %}

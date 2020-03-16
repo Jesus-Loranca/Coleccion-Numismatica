@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <div class="row">
+    <div class="item row">
         <div class="es col-12 col-md-6">
             <img src="{{ item.obverseImage() }}" alt="Imagen del Anverso: {{ item.name() }}">
             <img src="{{ item.reverseImage() }}" alt="Imagen del Reverso: {{ item.name() }}">
