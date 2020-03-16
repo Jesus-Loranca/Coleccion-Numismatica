@@ -48,8 +48,27 @@ h1 {
     max-width: 75%;
 }
 
+.content .home tr th {
+    text-align: center;
+    padding: 2% 0;
+}
+
+.content .home tr:first-of-type td {
+    border-top: none;
+}
+
+.content .home tr td {
+    text-align: center;
+    margin: 2% 0;
+}
+
+.content .item h1 {
+    margin-top: 10% !important;
+}
+
 .content .item img {
     max-width: 75%;
+    margin-top: 10%;
 }
 
 /****** Form ******/
