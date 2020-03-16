@@ -22,20 +22,6 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="navbar-collapse flex-grow-1 text-right">
-                <ul class="navbar-nav ml-auto flex-nowrap">
-                    <li>
-                        <a class="nav-link" href="{{ site.pageURL('es') }}"><img class="flag" src="{{ url_for('static', filename='img/es.png') }}" alt="es"></a>
-                    </li>
-
-                    <li>
-                        <a class="nav-link" href="{{ site.pageURL('en') }}"><img class="flag" src="{{ url_for('static', filename='img/gb.png') }}" alt="gb"></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="{{ site.domain() ~ site.language }}">{{ site.name() }}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -51,6 +37,18 @@
                     <li class="nav-item">
                         <a class="es nav-link" href="{{ site.domain() ~ 'es/links-interesantes' }}">Links Interesantes</a>
                         <a class="en nav-link" href="{{ site.domain() ~ 'en/interesting-links' }}">Interesting Links</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navbar-collapse flex-grow-1 text-right flags">
+                <ul class="navbar-nav ml-auto flex-nowrap">
+                    <li>
+                        <a class="nav-link" href="{{ site.pageURL('es') }}"><img class="flag" src="{{ url_for('static', filename='img/es.png') }}" alt="es"></a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="{{ site.pageURL('en') }}"><img class="flag" src="{{ url_for('static', filename='img/gb.png') }}" alt="gb"></a>
                     </li>
                 </ul>
             </div>

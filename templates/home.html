@@ -1,47 +1,49 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <h1 class="es">Últimas Adquisiciones</h1>
-    <h1 class="en">Latest Additions</h1>
+    <div class="home">
+        <h1 class="es">Últimas Adquisiciones</h1>
+        <h1 class="en">Latest Additions</h1>
 
-    <table class="table">
-        <thead>
-            <tr class="row">
-                <th class="es col-3">Imagen</th>
-                <th class="en col-3">Image</th>
-
-                <th class="es col-3">Nombre</th>
-                <th class="en col-3">Name</th>
-
-                <th class="es col-2">País</th>
-                <th class="en col-2">Country</th>
-
-                <th class="es col-2">Denominación</th>
-                <th class="en col-2">Denomination</th>
-
-                <th class="es col-2">Fecha de fabricación</th>
-                <th class="en col-2">Date of issue</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in items %}
+        <table class="table">
+            <thead>
                 <tr class="row">
-                    <td class="es col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.obverseImage() }}" alt="Imagen del Anverso: {{ item.name() }}"></a></td>
-                    <td class="en col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.reverseImage() }}" alt="Obverse Image: {{ item.name() }}"></a></td>
+                    <th class="es col-2">Imagen</th>
+                    <th class="en col-2">Image</th>
 
-                    <td class="es col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
-                    <td class="en col-3"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
+                    <th class="es col-4">Nombre</th>
+                    <th class="en col-4">Name</th>
 
-                    <td class="es col-2">{{ item.country() }}</td>
-                    <td class="en col-2">{{ item.country() }}</td>
+                    <th class="es col-2">País</th>
+                    <th class="en col-2">Country</th>
 
-                    <td class="es col-2">{{ item.denomination() }}</td>
-                    <td class="en col-2">{{ item.denomination() }}</td>
+                    <th class="es col-2">Denominación</th>
+                    <th class="en col-2">Denomination</th>
 
-                    <td class="es col-2">{{ item.date() }}</td>
-                    <td class="en col-2">{{ item.date() }}</td>
+                    <th class="es col-2">Fecha de fabricación</th>
+                    <th class="en col-2">Date of issue</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr class="row">
+                        <td class="es col-2"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.obverseImage() }}" alt="Imagen del Anverso: {{ item.name() }}"></a></td>
+                        <td class="en col-2"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}"><img src="{{ item.obverseImage() }}" alt="Obverse Image: {{ item.name() }}"></a></td>
+
+                        <td class="es col-4"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
+                        <td class="en col-4"><a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a></td>
+
+                        <td class="es col-2">{{ item.country() }}</td>
+                        <td class="en col-2">{{ item.country() }}</td>
+
+                        <td class="es col-2">{{ item.denomination() }}</td>
+                        <td class="en col-2">{{ item.denomination() }}</td>
+
+                        <td class="es col-2">{{ item.date() }}</td>
+                        <td class="en col-2">{{ item.date() }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
