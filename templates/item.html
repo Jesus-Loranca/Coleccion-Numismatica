@@ -21,8 +21,8 @@
 
                 {% set link = item.mintLink() %}
                 {% if link %}
-                    <a class="es" href="{{ link }}">Link a la ceca <span><img class="item-info" src="{{ url_for('static', filename='img/link.svg') }}" alt="Icono de información."></span></a>
-                    <a class="en" href="{{ link }}">Mint's link <span><img class="item-info" src="{{ url_for('static', filename='img/link.svg') }}" alt="Information icon."></span></a>
+                    <a class="es item-info" href="{{ link }}">Link a la ceca <i class="fas fa-external-link-alt"></i></a>
+                    <a class="en item-info" href="{{ link }}">Mint's link <i class="fas fa-external-link-alt"></i></a>
                 {% endif %}
             </div>
 
