@@ -19,8 +19,8 @@
 
                 {% set link = item.mintLink() %}
                 {% if link %}
-                    <a class="es" href="{{ link }}"><span>Icono para el Link</span></a>
-                    <a class="en" href="{{ link }}"><span>Link's icon</span></a>
+                    <a class="es" href="{{ link }}"><span><img class="flag" src="{{ url_for('static', filename='img/info.svg') }}" alt="Icono de información."></span> Link a la ceca.</a>
+                    <a class="en" href="{{ link }}"><span><img class="flag" src="{{ url_for('static', filename='img/info.svg') }}" alt="Information icon."></span> Mint's link.</a>
                 {% endif %}
             </div>
 
