@@ -75,10 +75,8 @@ h1 {
     margin: 5px 0 25px 0;
 }
 
-.content .item .item-info {
-    width: 15px;
+.content .item .item-info i {
     margin-left: 5px;
-    margin-bottom: 2px;
 }
 
 /****** Form ******/

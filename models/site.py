@@ -12,8 +12,9 @@ class Site:
 
     # Constructor.
     def __init__(self, language, pageName):
-        self.language = language
-        self.title = pageName
+        self.language  = language
+        self.title     = pageName
+        self.permalink = ''
 
     # Returns the name of the site.
     # It is thought to be used on the SEO title.
@@ -29,6 +30,9 @@ class Site:
 
     # Builds the page URL for the language change buttons.
     def pageURL(self, language = 'es'):
+        if self.permalink != '':
+            return os.getenv('domain') + language + '/' + self.permalink
+
         page = self.title.lower()
 
         if page == '' or page == 'inicio' or page == 'home':

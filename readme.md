@@ -11,5 +11,5 @@
 
 ### To run all the tests:
 ```zsh
-    pipenv run pytest tests/*/*
+    pipenv run pytest tests/*/* -v
 ```

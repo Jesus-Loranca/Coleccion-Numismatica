@@ -34,6 +34,10 @@ class TestSite:
         # Check site page URL when language is en and page is not home.
         assert site.pageURL('en') == 'http://127.0.0.1:5000/en/random-text/'
 
+        # Check site page URL when site.permalink is present.
+        site.permalink = 'offers/march-2020-promotion/'
+        assert site.pageURL() == 'http://127.0.0.1:5000/es/offers/march-2020-promotion/'
+
     def test_site_domain_returns_expected_string(self):
         site = Site('es', '')
 
