@@ -13,9 +13,9 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/<string:language>/')
 def home(language = 'es'):
-    site = Site(language, splitByLanguage('Inicio | Home', language))
+    site       = Site(language, splitByLanguage('Inicio | Home', language))
     collection = Collection(site)
-    items = collection.asItems()
+    items      = collection.asItems()
 
     return render_template('home.html', site = site, items = items)
 
@@ -33,7 +33,7 @@ def interestingLinks(language = 'es'):
 @app.route('/<string:language>/add/', methods=['GET', 'POST'])
 @app.route('/<string:language>/add-an-item-to-the-collection/', methods=['GET', 'POST'])
 def form(language = 'es'):
-    site = Site(language, splitByLanguage('Añadir un Objeto a la Colección | Add an Item to the Collection', language))
+    site       = Site(language, splitByLanguage('Añadir un Objeto a la Colección | Add an Item to the Collection', language))
     collection = Collection(site)
 
     # Ensure the form is being sent.
@@ -77,7 +77,7 @@ def form(language = 'es'):
                     request.form.get('grading'),
                     request.form.get('value'),
                     request.form.get('cost'),
-                    prepareItemLink(request.form.get('name')),
+                    prepareItemLink(request.form.get('type'), request.form.get('country'), request.form.get('date'), request.form.get('name')),
                     request.form.get('mint'),
                 ]
 
@@ -92,10 +92,11 @@ def form(language = 'es'):
 
 @app.route('/<string:language>/<string:type>/<string:country>/<string:year>/<string:item>/')
 def item(language, type, country, year, item):
-    site = Site(language, item)
-    collection = Collection(site)
-    item = Item(language, collection.find(type + '/' + country + '/' + year + '/' + item, 'Link'))
-    site.title = item.name()
+    site           = Site(language, item)
+    collection     = Collection(site)
+    item           = Item(language, collection.find(type + '/' + country + '/' + year + '/' + item, 'Link'))
+    site.title     = item.name()
+    site.permalink = item.link()
 
     return render_template('item.html', site = site, item = item)
 
