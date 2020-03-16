@@ -21,4 +21,4 @@ class TestUtilities:
         assert stringToURL('Historia del Progreso Tecnológico') == 'historia-del-progreso-tecnologico'
 
     def test_prepare_item_link(self):
-        assert prepareItemLink('Historia del Progreso Tecnológico | Historia del Progreso Tecnológico') == 'historia-del-progreso-tecnologico | historia-del-progreso-tecnologico'
+        assert prepareItemLink('Moneda | Coin', 'Reino Unido | United Kingdom', '1997', 'Historia del Progreso Tecnológico | History of Technological Achievement') == 'moneda/reino-unido/1997/historia-del-progreso-tecnologico | coin/united-kingdom/1997/history-of-technological-achievement'
