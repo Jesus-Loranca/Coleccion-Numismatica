@@ -4,8 +4,9 @@ from flask import Flask, request, render_template
 from models.site import Site
 from models.collection import Collection
 from models.item import Item
-from helpers.utilities import splitByLanguage
 from helpers.utilities import prepareItemLink
+from helpers.utilities import splitByLanguage
+from helpers.utilities import stringToURL
 
 app = Flask(__name__)
 
@@ -48,13 +49,16 @@ def form(language = 'es'):
             # Creates the folder if needed.
             collection.smartFileClient.put('/path/oper/mkdir/' + filePath)
 
+            # Generates the file name based on the item name.
+            fileName = stringToURL(splitByLanguage(request.form.get('name'), 'en'))
+
             # Uploads the Obverse and Reverse images.
-            collection.smartFileClient.post('/path/data/' + filePath, file = (request.files['obverse'].filename, request.files['obverse']))
-            collection.smartFileClient.post('/path/data/' + filePath, file = (request.files['reverse'].filename, request.files['reverse']))
+            collection.smartFileClient.post('/path/data/' + filePath, file = (fileName + '-obverse', request.files['obverse']))
+            collection.smartFileClient.post('/path/data/' + filePath, file = (fileName + '-reverse', request.files['reverse']))
 
             # Generates the href for the images to be saved in the Google Spreadsheet.
-            obverseURL = collection.smartFileClient.post('/link', path = filePath + '/' + request.files['obverse'].filename)
-            reverseURL = collection.smartFileClient.post('/link', path = filePath + '/' + request.files['reverse'].filename)
+            obverseURL = collection.smartFileClient.post('/link', path = filePath + '/' + fileName + '-obverse')
+            reverseURL = collection.smartFileClient.post('/link', path = filePath + '/' + fileName + '-reverse')
 
             if ('href' in obverseURL and 'href' in reverseURL):
                 # Insert our data in the Google Spreadsheet.
