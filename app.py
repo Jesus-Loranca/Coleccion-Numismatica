@@ -90,8 +90,8 @@ def form(language = 'es'):
 
     return render_template('form.html', site = site)
 
-@app.route('/<string:language>/<string:item>/')
-def item(language, item):
+@app.route('/<string:language>/<string:type>/<string:country>/<string:year>/<string:item>/')
+def item(language, type, country, year, item):
     site = Site(language, item)
     collection = Collection(site)
     item = Item(language, collection.find(item, 'Link'))
