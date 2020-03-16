@@ -2,14 +2,16 @@
 
 {% block content %}
     <div class="item row">
-        <div class="es col-12 col-md-6">
-            <img src="{{ item.obverseImage() }}" alt="Imagen del Anverso: {{ item.name() }}">
-            <img src="{{ item.reverseImage() }}" alt="Imagen del Reverso: {{ item.name() }}">
-        </div>
+        <div class="item-images col-12 col-md-6">
+            <div class="es">
+                <img src="{{ item.obverseImage() }}" alt="Imagen del Anverso: {{ item.name() }}">
+                <img src="{{ item.reverseImage() }}" alt="Imagen del Reverso: {{ item.name() }}">
+            </div>
 
-        <div class="en col-12 col-md-6">
-            <img src="{{ item.obverseImage() }}" alt="Obverse Image: {{ item.name() }}">
-            <img src="{{ item.reverseImage() }}" alt="Reverse Image: {{ item.name() }}">
+            <div class="en">
+                <img src="{{ item.obverseImage() }}" alt="Obverse Image: {{ item.name() }}">
+                <img src="{{ item.reverseImage() }}" alt="Reverse Image: {{ item.name() }}">
+            </div>
         </div>
 
         <div class="col-12 col-md-6">
@@ -19,8 +21,8 @@
 
                 {% set link = item.mintLink() %}
                 {% if link %}
-                    <a class="es" href="{{ link }}"><span><img class="flag" src="{{ url_for('static', filename='img/info.svg') }}" alt="Icono de información."></span> Link a la ceca.</a>
-                    <a class="en" href="{{ link }}"><span><img class="flag" src="{{ url_for('static', filename='img/info.svg') }}" alt="Information icon."></span> Mint's link.</a>
+                    <a class="es" href="{{ link }}">Link a la ceca <span><img class="item-info" src="{{ url_for('static', filename='img/link.svg') }}" alt="Icono de información."></span></a>
+                    <a class="en" href="{{ link }}">Mint's link <span><img class="item-info" src="{{ url_for('static', filename='img/link.svg') }}" alt="Information icon."></span></a>
                 {% endif %}
             </div>
 

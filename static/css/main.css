@@ -66,9 +66,19 @@ h1 {
     margin-top: 10% !important;
 }
 
-.content .item img {
+.content .item .item-images img {
     max-width: 75%;
     margin-top: 10%;
+}
+
+.content .item a {
+    margin: 5px 0 25px 0;
+}
+
+.content .item .item-info {
+    width: 15px;
+    margin-left: 5px;
+    margin-bottom: 2px;
 }
 
 /****** Form ******/
