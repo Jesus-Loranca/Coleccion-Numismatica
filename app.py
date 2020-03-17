@@ -52,13 +52,21 @@ def form(language = 'es'):
             # Generates the file name based on the item name.
             fileName = stringToURL(splitByLanguage(request.form.get('name'), 'en'))
 
+            # Updates the file name to be uploaded with the correct name.
+            obverse = request.files['obverse']
+            obverse.filename = fileName + '-obverse.jpg'
+
+            reverse =  request.files['reverse']
+            reverse.filename = fileName + '-reverse.jpg'
+
+
             # Uploads the Obverse and Reverse images.
-            collection.smartFileClient.post('/path/data/' + filePath, file = (fileName + '-obverse', request.files['obverse']))
-            collection.smartFileClient.post('/path/data/' + filePath, file = (fileName + '-reverse', request.files['reverse']))
+            collection.smartFileClient.post('/path/data/' + filePath, file = (obverse.filename, obverse))
+            collection.smartFileClient.post('/path/data/' + filePath, file = (reverse.filename, reverse))
 
             # Generates the href for the images to be saved in the Google Spreadsheet.
-            obverseURL = collection.smartFileClient.post('/link', path = filePath + '/' + fileName + '-obverse')
-            reverseURL = collection.smartFileClient.post('/link', path = filePath + '/' + fileName + '-reverse')
+            obverseURL = collection.smartFileClient.post('/link', path = filePath + '/' + obverse.filename)
+            reverseURL = collection.smartFileClient.post('/link', path = filePath + '/' + reverse.filename)
 
             if ('href' in obverseURL and 'href' in reverseURL):
                 # Insert our data in the Google Spreadsheet.
@@ -82,7 +90,9 @@ def form(language = 'es'):
                 ]
 
                 rowCount = len(collection.googleData)
-                collection.googleSheet.insert_row(insertData, rowCount + 1)
+
+                # It is being inserted with +2 in the row Count to increase the total +1, but also taking into account the header row.
+                collection.googleSheet.insert_row(insertData, rowCount + 2)
 
                 return render_template('form-success.html', site = site)
             else:

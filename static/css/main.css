@@ -59,7 +59,18 @@ h1 {
 
 .content .home tr td {
     text-align: center;
-    margin: 2% 0;
+    padding: 6% 0 2% 0;
+}
+
+@media only screen and (max-width: 992px) {
+    .content .home tr td {
+        padding-top: 5%;
+    }
+  }
+
+.content .home tr .image {
+    text-align: center;
+    padding-top: 2%;
 }
 
 .content .item h1 {
