@@ -90,7 +90,9 @@ def form(language = 'es'):
                 ]
 
                 rowCount = len(collection.googleData)
-                collection.googleSheet.insert_row(insertData, rowCount + 1)
+
+                # It is being inserted with +2 in the row Count to increase the total +1, but also taking into account the header row.
+                collection.googleSheet.insert_row(insertData, rowCount + 2)
 
                 return render_template('form-success.html', site = site)
             else:
