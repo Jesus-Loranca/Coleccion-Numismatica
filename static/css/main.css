@@ -40,9 +40,13 @@
 
 /****** Content ******/
 
+/* General */
+
 h1 {
     margin: 5% 0 !important;
 }
+
+/* Home */
 
 .content .home img {
     max-width: 75%;
@@ -73,6 +77,8 @@ h1 {
     padding-top: 2%;
 }
 
+/* Single Item */
+
 .content .item h1 {
     margin-top: 10% !important;
 }
@@ -88,6 +94,20 @@ h1 {
 
 .content .item .item-info i {
     margin-left: 5px;
+}
+
+.slider {
+    text-align: center;
+}
+
+.lSPager {
+    width: 100% !important;
+    margin: 25px auto !important;
+}
+
+.lSPager li {
+    width: 100px !important;
+    margin: 15px !important;
 }
 
 /****** Form ******/

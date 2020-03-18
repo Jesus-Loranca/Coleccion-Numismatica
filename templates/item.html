@@ -5,11 +5,11 @@
         <div class="item-images col-12 col-md-6">
             <div class="es">
                 <ul class="slider">
-                    <li>
+                    <li data-thumb="{{ item.obverseImage() }}">
                         <img class="zoom" src="{{ item.obverseImage() }}" alt="Imagen del Anverso: {{ item.name() }}">
                     </li>
 
-                    <li>
+                    <li data-thumb="{{ item.reverseImage() }}">
                         <img class="zoom" src="{{ item.reverseImage() }}" alt="Imagen del Reverso: {{ item.name() }}">
                     </li>
                 </ul>
@@ -17,11 +17,11 @@
 
             <div class="en slider">
                 <ul>
-                    <li>
+                    <li data-thumb="{{ item.obverseImage() }}">
                         <img class="zoom" src="{{ item.obverseImage() }}" alt="Obverse Image: {{ item.name() }}">
                     </li>
 
-                    <li>
+                    <li data-thumb="{{ item.reverseImage() }}">
                         <img class="zoom" src="{{ item.reverseImage() }}" alt="Reverse Image: {{ item.name() }}">
                     </li>
                 </ul>
