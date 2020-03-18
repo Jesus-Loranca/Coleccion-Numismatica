@@ -4,13 +4,27 @@
     <div class="item row">
         <div class="item-images col-12 col-md-6">
             <div class="es">
-                <img class="zoom" src="{{ item.obverseImage() }}" alt="Imagen del Anverso: {{ item.name() }}">
-                <img class="zoom" src="{{ item.reverseImage() }}" alt="Imagen del Reverso: {{ item.name() }}">
+                <ul class="slider">
+                    <li>
+                        <img class="zoom" src="{{ item.obverseImage() }}" alt="Imagen del Anverso: {{ item.name() }}">
+                    </li>
+
+                    <li>
+                        <img class="zoom" src="{{ item.reverseImage() }}" alt="Imagen del Reverso: {{ item.name() }}">
+                    </li>
+                </ul>
             </div>
 
-            <div class="en">
-                <img class="zoom" src="{{ item.obverseImage() }}" alt="Obverse Image: {{ item.name() }}">
-                <img class="zoom" src="{{ item.reverseImage() }}" alt="Reverse Image: {{ item.name() }}">
+            <div class="en slider">
+                <ul>
+                    <li>
+                        <img class="zoom" src="{{ item.obverseImage() }}" alt="Obverse Image: {{ item.name() }}">
+                    </li>
+
+                    <li>
+                        <img class="zoom" src="{{ item.reverseImage() }}" alt="Reverse Image: {{ item.name() }}">
+                    </li>
+                </ul>
             </div>
         </div>
 
