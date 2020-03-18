@@ -13,9 +13,10 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/<string:language>/')
 def home(language = 'es'):
-    site       = Site(language, splitByLanguage('Inicio | Home', language))
-    collection = Collection(site)
-    items      = collection.asItems()
+    site        = Site(language, splitByLanguage('Inicio | Home', language))
+    site.blowUp = True
+    collection  = Collection(site)
+    items       = collection.asItems()
 
     return render_template('home.html', site = site, items = items)
 
@@ -102,11 +103,14 @@ def form(language = 'es'):
 
 @app.route('/<string:language>/<string:type>/<string:country>/<string:year>/<string:item>/')
 def item(language, type, country, year, item):
-    site           = Site(language, item)
-    collection     = Collection(site)
-    item           = Item(language, collection.find(type + '/' + country + '/' + year + '/' + item, 'Link'))
-    site.title     = item.name()
-    site.permalink = item.link()
+    site             = Site(language, item)
+    site.blowUp      = True
+    site.lightSlider = True
+    site.fontAwesome = True
+    collection       = Collection(site)
+    item             = Item(language, collection.find(type + '/' + country + '/' + year + '/' + item, 'Link'))
+    site.title       = item.name()
+    site.permalink   = item.link()
 
     return render_template('item.html', site = site, item = item)
 
