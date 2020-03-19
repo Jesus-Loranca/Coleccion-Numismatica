@@ -4,25 +4,28 @@
     <div class="item row">
         <div class="item-images col-12 col-md-6">
             <div class="es">
+                {% set obverseImage = item.obverseImage() %}
+                {% set reverseImage = item.reverseImage() %}
+                {% set name = item.name() %}
                 <ul class="slider">
-                    <li data-thumb="{{ item.obverseImage() }}">
-                        <img class="zoom" src="{{ item.obverseImage() }}" alt="Imagen del Anverso: {{ item.name() }}">
+                    <li data-thumb="{{ obverseImage }}">
+                        <img class="zoom" src="{{ obverseImage }}" alt="Imagen del Anverso: {{ name }}">
                     </li>
 
-                    <li data-thumb="{{ item.reverseImage() }}">
-                        <img class="zoom" src="{{ item.reverseImage() }}" alt="Imagen del Reverso: {{ item.name() }}">
+                    <li data-thumb="{{ reverseImage }}">
+                        <img class="zoom" src="{{ reverseImage }}" alt="Imagen del Reverso: {{ name }}">
                     </li>
                 </ul>
             </div>
 
             <div class="en slider">
                 <ul>
-                    <li data-thumb="{{ item.obverseImage() }}">
-                        <img class="zoom" src="{{ item.obverseImage() }}" alt="Obverse Image: {{ item.name() }}">
+                    <li data-thumb="{{ obverseImage }}">
+                        <img class="zoom" src="{{ obverseImage }}" alt="Obverse Image: {{ name }}">
                     </li>
 
-                    <li data-thumb="{{ item.reverseImage() }}">
-                        <img class="zoom" src="{{ item.reverseImage() }}" alt="Reverse Image: {{ item.name() }}">
+                    <li data-thumb="{{ reverseImage }}">
+                        <img class="zoom" src="{{ reverseImage }}" alt="Reverse Image: {{ name }}">
                     </li>
                 </ul>
             </div>
@@ -30,8 +33,10 @@
 
         <div class="col-12 col-md-6">
             <div class="row">
-                <h1 class="es">{{ item.denomination() ~ ' de ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
-                <h1 class="en">{{ item.denomination() ~ ' from ' ~ item.date() ~ ', ' ~ item.name() }}</h1>
+                {% set denomination = item.denomination() %}
+                {% set date = item.date() %}
+                <h1 class="es">{{ denomination ~ ' de ' ~ date ~ ', ' ~ name }}</h1>
+                <h1 class="en">{{ denomination ~ ' from ' ~ date ~ ', ' ~ name }}</h1>
 
                 {% set link = item.mintLink() %}
                 {% if link %}
