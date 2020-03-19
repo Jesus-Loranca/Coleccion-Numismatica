@@ -8,6 +8,12 @@ $(document).ready(function () {
         });
     });
 
+    // Single item images slider.
+    $('.slider').lightSlider({
+        item: 1,
+        gallery: true,
+    });
+
     // Single item magnifiying effect.
     $('.item .zoom').each(function (index, element) {
         $(element).blowup({

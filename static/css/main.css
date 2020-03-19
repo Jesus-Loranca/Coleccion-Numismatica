@@ -40,9 +40,13 @@
 
 /****** Content ******/
 
+/* General */
+
 h1 {
     margin: 5% 0 !important;
 }
+
+/* Home */
 
 .content .home img {
     max-width: 75%;
@@ -66,12 +70,14 @@ h1 {
     .content .home tr td {
         padding-top: 5%;
     }
-  }
+}
 
 .content .home tr .image {
     text-align: center;
     padding-top: 2%;
 }
+
+/* Single Item */
 
 .content .item h1 {
     margin-top: 10% !important;
@@ -88,6 +94,44 @@ h1 {
 
 .content .item .item-info i {
     margin-left: 5px;
+}
+
+.slider {
+    text-align: center;
+}
+
+.lSPager {
+    width: 65% !important;
+    margin: 25px auto !important;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 769px) {
+    .lSPager {
+        width: 55% !important;
+    }
+}
+
+@media only screen and (min-width: 770px) and (max-width: 992px) {
+    .lSPager {
+        width: 80% !important;
+    }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    .lSPager {
+        width: 60% !important;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .lSPager {
+        width: 50% !important;
+    }
+}
+
+.lSPager li {
+    width: 100px !important;
+    margin: 15px !important;
 }
 
 /****** Form ******/
