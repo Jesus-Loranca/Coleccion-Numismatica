@@ -27,32 +27,28 @@
             <tbody>
                 {% for item in items %}
                     <tr class="row">
+                        {% set link = site.domain() ~ site.language ~ '/' ~ item.link() %}
+                        {% set obverseImage = item.obverseImage() %}
                         <td class="es image col-2">
-                            <a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">
-                                <img class="zoom" src="{{ item.obverseImage() }}" alt="Imagen del Anverso: {{ item.name() }}">
+                            <a href="{{ link }}">
+                                <img class="zoom" src="{{ obverseImage }}" alt="Imagen del Anverso: {{ item.name() }}">
                             </a>
                         </td>
                         <td class="en image col-2">
-                            <a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">
-                                <img class="zoom" src="{{ item.obverseImage() }}" alt="Obverse Image: {{ item.name() }}">
+                            <a href="{{ link }}">
+                                <img class="zoom" src="{{ obverseImage }}" alt="Obverse Image: {{ item.name() }}">
                             </a>
                         </td>
 
-                        <td class="es col-4">
-                            <a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a>
-                        </td>
-                        <td class="en col-4">
-                            <a href="{{ site.domain() ~ site.language ~ '/' ~ item.link() }}">{{ item.name() }}</a>
+                        <td class="col-4">
+                            <a href="{{ link }}">{{ item.name() }}</a>
                         </td>
 
-                        <td class="es col-2">{{ item.country() }}</td>
-                        <td class="en col-2">{{ item.country() }}</td>
+                        <td class="col-2">{{ item.country() }}</td>
 
-                        <td class="es col-2">{{ item.denomination() }}</td>
-                        <td class="en col-2">{{ item.denomination() }}</td>
+                        <td class="col-2">{{ item.denomination() }}</td>
 
-                        <td class="es col-2">{{ item.date() }}</td>
-                        <td class="en col-2">{{ item.date() }}</td>
+                        <td class="col-2">{{ item.date() }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
