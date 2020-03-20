@@ -1,6 +1,7 @@
 import os
 import json
 from flask import Flask, request, render_template
+from flask_moment import Moment
 from models.site import Site
 from models.collection import Collection
 from models.item import Item
@@ -9,12 +10,14 @@ from helpers.utilities import splitByLanguage
 from helpers.utilities import stringToURL
 
 app = Flask(__name__)
+moment = Moment(app)
 
 @app.route('/')
 @app.route('/<string:language>/')
 def home(language = 'es'):
     site        = Site(language, splitByLanguage('Inicio | Home', language))
     site.blowUp = True
+
     collection  = Collection(site)
     items       = collection.asItems()
 
@@ -106,9 +109,10 @@ def item(language, type, country, year, item):
     site             = Site(language, item)
     site.blowUp      = True
     site.lightSlider = True
-    site.fontAwesome = True
+
     collection       = Collection(site)
     item             = Item(language, collection.find(type + '/' + country + '/' + year + '/' + item, 'Link'))
+
     site.title       = item.name()
     site.permalink   = item.link()
 

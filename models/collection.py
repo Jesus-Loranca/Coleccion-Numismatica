@@ -104,7 +104,3 @@ class Collection:
     # Returns the SmartFile connection to be able to use it later on for images.
     def smartFile(self):
         self.smartFileClient = BasicClient(os.getenv('smartfile_api_key'), os.getenv('smartfile_api_password'))
-
-    # Returns the collection total value converted into the right country currency.
-    def totalValue(self):
-        return self.currency
