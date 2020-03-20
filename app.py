@@ -10,6 +10,7 @@ from helpers.utilities import splitByLanguage
 from helpers.utilities import stringToURL
 
 app = Flask(__name__)
+moment = Moment(app)
 
 @app.route('/')
 @app.route('/<string:language>/')
