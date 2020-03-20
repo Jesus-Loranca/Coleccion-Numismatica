@@ -2,7 +2,8 @@
 
 /* Languages Nav */
 
-.navbar{
+.navbar {
+    padding: 1.5rem 1rem !important;
     box-shadow: 0px 0px 5px 0px rgba(0, 0 ,0, 0.1);
 }
 
@@ -30,7 +31,7 @@
 @media only screen and (max-width: 990px) {
     .flags {
         position: absolute;
-        top: 2px;
+        top: 19px;
         right: 90px;
     }
 }
