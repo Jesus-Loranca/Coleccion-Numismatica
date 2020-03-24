@@ -14,6 +14,7 @@ $(document).ready(function () {
     if ($('.slider').length > 1) {
         $('.slider').lightSlider({
             item: 1,
+            controls: false,
             gallery: true,
         });
     }
