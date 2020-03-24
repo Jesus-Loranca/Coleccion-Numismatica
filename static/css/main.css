@@ -7,6 +7,10 @@
     box-shadow: 0px 0px 5px 0px rgba(0, 0 ,0, 0.1);
 }
 
+.navbar-brand {
+    color: #2F4F4F !important;
+}
+
 .flags {
     max-width: 100px;
 }
@@ -22,7 +26,6 @@
         display: flex;
     }
 }
-
 
 .flags li {
     display: inline-block;
@@ -49,6 +52,10 @@
 
 h1 {
     margin: 125px 0 5% 0 !important;
+}
+
+h1, h2, h3, th, td, p {
+    color: #2F4F4F !important;
 }
 
 /* Home */
