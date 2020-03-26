@@ -60,7 +60,11 @@ h1 {
 }
 
 h1, h2, h3, th, td, p {
-    color: #2F4F4F !important;
+    color: #5a6268 !important;
+}
+
+h1, h2, h3 {
+    font-weight: 300 !important;
 }
 
 /* Home */
@@ -70,6 +74,7 @@ h1, h2, h3, th, td, p {
 }
 
 .content .home tr th {
+    font-weight: 500 !important;
     text-align: center;
     padding: 2% 0;
 }
@@ -105,8 +110,12 @@ h1, h2, h3, th, td, p {
     margin: 5px 0 25px 0;
 }
 
-.content .item .item-info i {
+.content .item .item-mint-link i {
     margin-left: 5px;
+}
+
+.content .item .item-info {
+    font-weight: 500 !important;
 }
 
 .slider {
@@ -169,4 +178,8 @@ footer a {
 footer p {
     margin-top: 25px;
     font-size: 80%;
+}
+
+footer .copyright {
+    font-weight: 500;
 }
