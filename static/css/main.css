@@ -156,7 +156,22 @@ h1, h2, h3 {
     margin: 15px !important;
 }
 
-/*Form */
+/* Interesting Links */
+
+.interesting-links h2 {
+    margin: 25px 0 15px 0;
+}
+
+.interesting-links div:first-of-type h2 {
+    margin-top: 0;
+}
+
+.interesting-links a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Form */
 
 fieldset {
     margin: 10% 0 !important;
