@@ -8,20 +8,20 @@
         <table class="table">
             <thead>
                 <tr class="row">
-                    <th class="es col-2">Imagen</th>
-                    <th class="en col-2">Image</th>
+                    <th class="es col-12 col-lg-2">Imagen</th>
+                    <th class="en col-12 col-lg-2">Image</th>
 
-                    <th class="es col-4">Nombre</th>
-                    <th class="en col-4">Name</th>
+                    <th class="es col-12 col-lg-4">Nombre</th>
+                    <th class="en col-12 col-lg-4">Name</th>
 
-                    <th class="es col-2">País</th>
-                    <th class="en col-2">Country</th>
+                    <th class="es col-12 col-lg-2">País</th>
+                    <th class="en col-12 col-lg-2">Country</th>
 
-                    <th class="es col-2">Denominación</th>
-                    <th class="en col-2">Denomination</th>
+                    <th class="es col-12 col-lg-2">Denominación</th>
+                    <th class="en col-12 col-lg-2">Denomination</th>
 
-                    <th class="es col-2">Fecha de fabricación</th>
-                    <th class="en col-2">Date of issue</th>
+                    <th class="es col-12 col-lg-2">Fecha de fabricación</th>
+                    <th class="en col-12 col-lg-2">Date of issue</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,26 +29,26 @@
                     <tr class="row">
                         {% set link = site.domain() ~ site.language ~ '/' ~ item.link() %}
                         {% set obverseImage = item.obverseImage() %}
-                        <td class="es image col-2">
+                        <td class="es image col-12 col-lg-2">
                             <a href="{{ link }}">
                                 <img class="zoom" src="{{ obverseImage }}" alt="Imagen del Anverso: {{ item.name() }}">
                             </a>
                         </td>
-                        <td class="en image col-2">
+                        <td class="en image col-12 col-lg-2">
                             <a href="{{ link }}">
                                 <img class="zoom" src="{{ obverseImage }}" alt="Obverse Image: {{ item.name() }}">
                             </a>
                         </td>
 
-                        <td class="col-4">
+                        <td class="col-12 col-lg-4">
                             <a href="{{ link }}">{{ item.name() }}</a>
                         </td>
 
-                        <td class="col-2">{{ item.country() }}</td>
+                        <td class="col-12 col-lg-2">{{ item.country() }}</td>
 
-                        <td class="col-2">{{ item.denomination() }}</td>
+                        <td class="col-12 col-lg-2">{{ item.denomination() }}</td>
 
-                        <td class="col-2">{{ item.date() }}</td>
+                        <td class="col-12 col-lg-2">{{ item.date() }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
