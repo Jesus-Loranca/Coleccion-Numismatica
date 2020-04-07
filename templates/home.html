@@ -28,20 +28,39 @@
                 {% for item in items %}
                     <tr class="row">
                         {% set link = site.domain() ~ site.language ~ '/' ~ item.link() %}
-                        {% set obverseImage = item.obverseImage() %}
-                        <td class="es image col-12 col-lg-2">
-                            <a href="{{ link }}">
-                                <img class="zoom" src="{{ obverseImage }}" alt="Imagen del Anverso: {{ item.name() }}">
-                            </a>
-                        </td>
-                        <td class="en image col-12 col-lg-2">
-                            <a href="{{ link }}">
-                                <img class="zoom" src="{{ obverseImage }}" alt="Obverse Image: {{ item.name() }}">
-                            </a>
-                        </td>
+                        {% set name = item.name() %}
+                        {% set type = item.type() %}
+
+                        {% if type in ['Billete', 'Banknote'] %}
+                            {% set obverseImage = item.obverseImage() %}
+                            <td class="es image col-12 col-lg-2">
+                                <a href="{{ link }}">
+                                    <img class="zoom" src="{{ obverseImage }}" alt="Imagen del Anverso: {{ name }}">
+                                </a>
+                            </td>
+                            <td class="en image col-12 col-lg-2">
+                                <a href="{{ link }}">
+                                    <img class="zoom" src="{{ obverseImage }}" alt="Obverse Image: {{ name }}">
+                                </a>
+                            </td>
+                        {% endif %}
+
+                        {% if type in ['Moneda', 'Coin'] %}
+                            {% set reverseImage = item.reverseImage() %}
+                            <td class="es image col-12 col-lg-2">
+                                <a href="{{ link }}">
+                                    <img class="zoom" src="{{ reverseImage }}" alt="Imagen del Reverso: {{ name }}">
+                                </a>
+                            </td>
+                            <td class="en image col-12 col-lg-2">
+                                <a href="{{ link }}">
+                                    <img class="zoom" src="{{ reverseImage }}" alt="Reverse Image: {{ name }}">
+                                </a>
+                            </td>
+                        {% endif %}
 
                         <td class="col-12 col-lg-4">
-                            <a href="{{ link }}">{{ item.name() }}</a>
+                            <a href="{{ link }}">{{ name }}</a>
                         </td>
 
                         <td class="col-12 col-lg-2">{{ item.country() }}</td>
