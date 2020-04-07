@@ -3,32 +3,62 @@
 {% block content %}
     <div class="item row">
         <div class="item-images col-12 col-md-6">
-            <div class="es">
-                {% set obverseImage = item.obverseImage() %}
-                {% set reverseImage = item.reverseImage() %}
-                {% set name = item.name() %}
-                <ul class="slider">
-                    <li data-thumb="{{ obverseImage }}">
-                        <img class="zoom" src="{{ obverseImage }}" alt="Imagen del Anverso: {{ name }}">
-                    </li>
+            {% set obverseImage = item.obverseImage() %}
+            {% set reverseImage = item.reverseImage() %}
+            {% set name = item.name() %}
+            {% set type = item.type() %}
 
-                    <li data-thumb="{{ reverseImage }}">
-                        <img class="zoom" src="{{ reverseImage }}" alt="Imagen del Reverso: {{ name }}">
-                    </li>
-                </ul>
-            </div>
+            {% if type in ['Billete', 'Banknote'] %}
+                <div class="es">
+                    <ul class="slider">
+                        <li data-thumb="{{ obverseImage }}">
+                            <img class="zoom" src="{{ obverseImage }}" alt="Imagen del Anverso: {{ name }}">
+                        </li>
 
-            <div class="en">
-                <ul class="slider">
-                    <li data-thumb="{{ obverseImage }}">
-                        <img class="zoom" src="{{ obverseImage }}" alt="Obverse Image: {{ name }}">
-                    </li>
+                        <li data-thumb="{{ reverseImage }}">
+                            <img class="zoom" src="{{ reverseImage }}" alt="Imagen del Reverso: {{ name }}">
+                        </li>
+                    </ul>
+                </div>
 
-                    <li data-thumb="{{ reverseImage }}">
-                        <img class="zoom" src="{{ reverseImage }}" alt="Reverse Image: {{ name }}">
-                    </li>
-                </ul>
-            </div>
+                <div class="en">
+                    <ul class="slider">
+                        <li data-thumb="{{ obverseImage }}">
+                            <img class="zoom" src="{{ obverseImage }}" alt="Obverse Image: {{ name }}">
+                        </li>
+
+                        <li data-thumb="{{ reverseImage }}">
+                            <img class="zoom" src="{{ reverseImage }}" alt="Reverse Image: {{ name }}">
+                        </li>
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% if type in ['Moneda', 'Coin'] %}
+                <div class="es">
+                    <ul class="slider">
+                        <li data-thumb="{{ reverseImage }}">
+                            <img class="zoom" src="{{ reverseImage }}" alt="Imagen del Reverso: {{ name }}">
+                        </li>
+
+                        <li data-thumb="{{ obverseImage }}">
+                            <img class="zoom" src="{{ obverseImage }}" alt="Imagen del Anverso: {{ name }}">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="en">
+                    <ul class="slider">
+                        <li data-thumb="{{ reverseImage }}">
+                            <img class="zoom" src="{{ reverseImage }}" alt="Reverse Image: {{ name }}">
+                        </li>
+
+                        <li data-thumb="{{ obverseImage }}">
+                            <img class="zoom" src="{{ obverseImage }}" alt="Obverse Image: {{ name }}">
+                        </li>
+                    </ul>
+                </div>
+            {% endif %}
         </div>
 
         <div class="col-12 col-md-6">
@@ -70,13 +100,15 @@
                 <p class="en item-info col-12 col-md-6 col-lg-3">Composition: </p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.composition() }}</p>
 
-                <p class="es item-info col-12 col-md-6 col-lg-3">Año de la serie:</p>
-                <p class="en item-info col-12 col-md-6 col-lg-3">Series number:</p>
-                <p class="col-12 col-md-6 col-lg-9">{{ item.seriesNumber() }}</p>
+                {% if type in ['Billete', 'Banknote'] %}
+                    <p class="es item-info col-12 col-md-6 col-lg-3">Año de la serie:</p>
+                    <p class="en item-info col-12 col-md-6 col-lg-3">Series number:</p>
+                    <p class="col-12 col-md-6 col-lg-9">{{ item.seriesNumber() }}</p>
 
-                <p class="es item-info col-12 col-md-6 col-lg-3">Número de Serie:</p>
-                <p class="en item-info col-12 col-md-6 col-lg-3">Serial numbers:</p>
-                <p class="col-12 col-md-6 col-lg-9">{{ item.serialNumber() }}</p>
+                    <p class="es item-info col-12 col-md-6 col-lg-3">Número de Serie:</p>
+                    <p class="en item-info col-12 col-md-6 col-lg-3">Serial numbers:</p>
+                    <p class="col-12 col-md-6 col-lg-9">{{ item.serialNumber() }}</p>
+                {% endif %}
 
                 <p class="es item-info col-12 col-md-6 col-lg-3">Estado:</p>
                 <p class="en item-info col-12 col-md-6 col-lg-3">Grading:</p>
