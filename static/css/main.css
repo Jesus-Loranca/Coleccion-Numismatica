@@ -177,6 +177,12 @@ fieldset {
     margin: 10% 0 !important;
 }
 
+/* Blow Up Library */
+
+#BlowupLens {
+    top: 10px;
+}
+
 /****** Footer ******/
 
 footer {
