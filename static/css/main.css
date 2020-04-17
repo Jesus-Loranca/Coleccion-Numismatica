@@ -11,17 +11,24 @@
     color: #2F4F4F !important;
 }
 
+@media only screen and (max-width: 992px) {
+    .navbar-brand {
+        max-width: 150px;
+        white-space: normal !important;
+    }
+}
+
 .flags {
     max-width: 100px;
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 992px) {
     .flags ul {
         display: inline-block;
     }
 }
 
-@media only screen and (min-width: 991px) {
+@media only screen and (min-width: 993px) {
     .flags ul {
         display: flex;
     }
@@ -31,10 +38,10 @@
     display: inline-block;
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 992px) {
     .flags {
         position: absolute;
-        top: 19px;
+        top: 33px;
         right: 90px;
     }
 }
