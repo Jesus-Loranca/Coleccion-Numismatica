@@ -66,6 +66,12 @@ h1 {
     margin: 125px 0 5% 0 !important;
 }
 
+@media only screen and (max-width: 992px) {
+    h1 {
+        margin: 55px 0 5% 0 !important;
+    }
+}
+
 h1, h2, h3, th, td, p {
     color: #5a6268 !important;
 }
@@ -113,6 +119,19 @@ h1, h2, h3 {
     margin-top: 125px;
 }
 
+@media only screen and (max-width: 992px) {
+    .content .item .item-images img {
+        margin-top: 55px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .content .item .item-properties {
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
+
 .content .item a {
     margin: 5px 0 25px 0;
 }
@@ -130,7 +149,7 @@ h1, h2, h3 {
 }
 
 .lSPager {
-    width: 65% !important;
+    width: 80% !important;
     margin: 25px auto !important;
 }
 

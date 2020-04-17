@@ -62,7 +62,7 @@
         </div>
 
         <div class="col-12 col-md-6">
-            <div class="row">
+            <div class="row item-properties">
                 {% set denomination = item.denomination() %}
                 {% set date = item.date() %}
                 <h1 class="es">{{ denomination ~ ' de ' ~ date ~ ', ' ~ name }}</h1>
@@ -75,7 +75,7 @@
                 {% endif %}
             </div>
 
-            <div class="row">
+            <div class="row item-properties">
                 <p class="es item-info col-12 col-md-6 col-lg-3">Nombre:</p>
                 <p class="en item-info col-12 col-md-6 col-lg-3">Name:</p>
                 <p class="col-12 col-md-6 col-lg-9">{{ item.name() }}</p>
