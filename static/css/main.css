@@ -105,15 +105,33 @@ h1, h2, h3 {
     padding: 6% 0 2% 0;
 }
 
+.content .home thead th {
+    border-bottom: 1px solid #dee2e6;
+}
+
+@media only screen and (max-width: 992px) {
+    .content .home thead th {
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 992px) {
     .content .home tr td {
-        padding-top: 5%;
+        padding-top: 2%;
+        border: none;
     }
 }
 
 .content .home tr .image {
     text-align: center;
     padding-top: 2%;
+}
+
+@media only screen and (max-width: 992px) {
+    .content .home tr .image {
+        padding-top: 10%;
+        padding-bottom: 5%;
+    }
 }
 
 /* Single Item */
@@ -219,6 +237,12 @@ footer {
     margin-top: 150px;
     padding-top: 75px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0 ,0, 0.1);
+}
+
+@media only screen and (max-width: 992px) {
+    footer {
+        margin-top: 75px;
+    }
 }
 
 footer a {
