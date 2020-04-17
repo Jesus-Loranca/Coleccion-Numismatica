@@ -80,6 +80,10 @@ h1, h2, h3 {
     font-weight: 300 !important;
 }
 
+.container {
+    max-width: 90%;
+}
+
 /* Home */
 
 .content .home img {
@@ -128,7 +132,6 @@ h1, h2, h3 {
 @media only screen and (max-width: 992px) {
     .content .item .item-properties {
         margin: 0 auto;
-        padding: 0 15px;
     }
 }
 
@@ -149,7 +152,7 @@ h1, h2, h3 {
 }
 
 .lSPager {
-    width: 80% !important;
+    width: 90% !important;
     margin: 25px auto !important;
 }
 
